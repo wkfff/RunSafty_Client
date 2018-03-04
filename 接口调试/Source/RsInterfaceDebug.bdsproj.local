@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015-09-07 13:09:37.870.pas,D:\用户目录\Documents\Borland Studio Projects\Unit3.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\ufrmMain.pas</Transaction>
+    <Transaction>2015-09-07 13:09:37.870.dfm,D:\用户目录\Documents\Borland Studio Projects\Unit3.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\ufrmMain.dfm</Transaction>
+    <Transaction>2015-09-07 13:09:47.561.bdsproj,D:\用户目录\Documents\Borland Studio Projects\Project1.bdsproj=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\RsInterfaceDebug.bdsproj</Transaction>
+    <Transaction>2015-09-07 13:10:06.837.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\uGlobalDM.pas</Transaction>
+    <Transaction>2015-09-07 13:10:06.837.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\uGlobalDM.dfm</Transaction>
+    <Transaction>2015-09-07 13:10:49.457.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\uChildFrmMgr.pas</Transaction>
+    <Transaction>2015-09-07 13:29:40.890.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\基础字典接口测试\ufrmBasicDicDebug.pas</Transaction>
+    <Transaction>2015-09-07 13:29:40.890.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\基础字典接口测试\ufrmBasicDicDebug.dfm</Transaction>
+    <Transaction>2015-09-07 13:31:44.800.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\请销假测试\ufrmAskLeaveDebug.pas</Transaction>
+    <Transaction>2015-09-07 13:31:44.800.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\请销假测试\ufrmAskLeaveDebug.dfm</Transaction>
+    <Transaction>2015-09-07 13:33:03.130.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\人员管理接口测试\ufrmTrainmanMgrDebug.pas</Transaction>
+    <Transaction>2015-09-07 13:33:03.130.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\人员管理接口测试\ufrmTrainmanMgrDebug.dfm</Transaction>
+    <Transaction>2015-09-08 14:50:14.390.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\事件接口\ufrmEventDebug.pas</Transaction>
+    <Transaction>2015-09-08 14:50:14.390.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\事件接口\ufrmEventDebug.dfm</Transaction>
+    <Transaction>2015-09-08 14:51:30.396.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\写卡区段接口\ufrmWriteCardSectionDebug.pas</Transaction>
+    <Transaction>2015-09-08 14:51:30.396.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\写卡区段接口\ufrmWriteCardSectionDebug.dfm</Transaction>
+    <Transaction>2015-09-08 14:52:31.628.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\叫班接口\ufrmJiaoBanDebug.pas</Transaction>
+    <Transaction>2015-09-08 14:52:31.628.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\叫班接口\ufrmJiaoBanDebug.dfm</Transaction>
+    <Transaction>2015-09-08 14:53:48.954.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit2.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\师徒关系\ufrmXYRelationDebug.pas</Transaction>
+    <Transaction>2015-09-08 14:53:48.954.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit2.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\师徒关系\ufrmXYRelationDebug.dfm</Transaction>
+    <Transaction>2015-09-08 15:04:33.003.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\事件接口\uLCEvent.pas</Transaction>
+    <Transaction>2015-09-08 15:22:51.430.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\写卡区段\uLCWriteCardSection.pas</Transaction>
+    <Transaction>2015-09-08 15:35:19.066.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\叫班\uLCCallNotify.pas</Transaction>
+    <Transaction>2015-09-08 16:04:24.633.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\师徒关系\uLCXYRelationn.pas</Transaction>
+    <Transaction>2015-09-08 16:48:53.043.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\指导队\uLCTeamGuide.pas</Transaction>
+    <Transaction>2015-09-08 16:49:21.938.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\饭票\uLCMealTicket.pas</Transaction>
+    <Transaction>2015-09-09 09:49:29.967.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\测酒\uLCDrink.pas</Transaction>
+    <Transaction>2015-09-09 11:04:26.231.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\物品管理\uLCGoodsMgr.pas</Transaction>
+    <Transaction>2015-09-09 12:31:09.817.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\逻辑层BPL\Source\通用函数\uLLCommonFun.pas=</Transaction>
+    <Transaction>2015-09-09 13:45:57.463.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\机车计划\uLCDayPlan.pas</Transaction>
+    <Transaction>2015-09-09 16:21:09.025.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\机车计划\uDBTemplateDayPlan.pas=</Transaction>
+    <Transaction>2015-09-09 16:50:46.256.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\机车交路\uLCTrainJiaolu.pas=</Transaction>
+    <Transaction>2015-09-09 16:56:15.277.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\名牌管理\uLCNameBoard.pas=</Transaction>
+    <Transaction>2015-09-09 16:58:39.363.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\指导队\uFrmTeamGuideDebug.pas</Transaction>
+    <Transaction>2015-09-09 16:58:39.363.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\指导队\uFrmTeamGuideDebug.dfm</Transaction>
+    <Transaction>2015-09-09 17:04:01.208.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\测酒接口\uFrmDrinkDebug.pas</Transaction>
+    <Transaction>2015-09-09 17:04:01.208.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\测酒接口\uFrmDrinkDebug.dfm</Transaction>
+    <Transaction>2015-09-09 17:05:33.416.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\机车计划\ufrmDayPlanDebug.pas</Transaction>
+    <Transaction>2015-09-09 17:05:33.416.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\机车计划\ufrmDayPlanDebug.dfm</Transaction>
+    <Transaction>2015-09-09 17:07:07.987.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit2.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\物品管理\ufrmGoodsMgrDebug.pas</Transaction>
+    <Transaction>2015-09-09 17:07:07.987.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit2.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\物品管理\ufrmGoodsMgrDebug.dfm</Transaction>
+    <Transaction>2015-09-10 09:58:01.518.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\ufrmDebugBase.pas</Transaction>
+    <Transaction>2015-09-10 09:58:01.518.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\ufrmDebugBase.dfm</Transaction>
+    <Transaction>2015-09-10 10:35:59.912.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\指导队\uFrmTeamGuideDebug.pas=</Transaction>
+    <Transaction>2015-09-10 10:35:59.912.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\指导队\uFrmTeamGuideDebug.dfm=</Transaction>
+    <Transaction>2015-09-10 10:37:06.362.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\指导队\uFrmTeamGuideDebug.pas</Transaction>
+    <Transaction>2015-09-10 10:37:06.362.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\指导队\uFrmTeamGuideDebug.dfm</Transaction>
+    <Transaction>2015-09-10 11:05:40.720.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\师徒关系\ufrmXYRelationDebug.pas=</Transaction>
+    <Transaction>2015-09-10 11:05:40.720.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\师徒关系\ufrmXYRelationDebug.dfm=</Transaction>
+    <Transaction>2015-09-10 11:06:03.724.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\师徒关系\ufrmXYRelationDebug.pas</Transaction>
+    <Transaction>2015-09-10 11:06:03.724.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\师徒关系\ufrmXYRelationDebug.dfm</Transaction>
+    <Transaction>2015-09-10 11:08:44.883.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\师徒关系\uLCXYRelationn.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\逻辑层BPL\Source\业务逻辑\新接口\师徒关系\uLCXYRelation.pas</Transaction>
+    <Transaction>2015-09-10 12:40:55.357.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\物品管理\ufrmGoodsMgrDebug.pas=</Transaction>
+    <Transaction>2015-09-10 12:40:55.357.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\物品管理\ufrmGoodsMgrDebug.dfm=</Transaction>
+    <Transaction>2015-09-10 12:41:04.815.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\物品管理\ufrmGoodsMgrDebug.pas</Transaction>
+    <Transaction>2015-09-10 12:41:04.815.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\物品管理\ufrmGoodsMgrDebug.dfm</Transaction>
+    <Transaction>2015-09-10 13:20:49.832.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\机车计划\ufrmDayPlanDebug.pas=</Transaction>
+    <Transaction>2015-09-10 13:20:49.832.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\机车计划\ufrmDayPlanDebug.dfm=</Transaction>
+    <Transaction>2015-09-10 13:21:04.849.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\机车计划\ufrmDayPlanDebug.pas</Transaction>
+    <Transaction>2015-09-10 13:21:04.849.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\Unit1.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\接口翻译\接口调试\Source\子窗口\机车计划\ufrmDayPlanDebug.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,393 @@
+unit uRsRtfDefine;
+
+interface
+uses
+  Contnrs,superobject;
+type
+  TRtInfoUpdateType = (utNone{不更新},utUpdate{更新},utAdd{添加});
+  {运行记录信息}
+  TRuntimeInfo = class
+    {本地记录ID}
+    nID: Integer;
+    {GSCL2005记录ID}
+    fid: Integer;
+    {分析时间}
+    dtAnalysis: TDateTime;
+    {格式化文件名}
+    fmtFileName: string;
+    {司机1工号}
+    strTrainmanNumber1: string;
+    {司机2工号}
+    strTrainmanNumber2: string;
+    {车间路径}
+    strAppartmetnPath: string;
+    {文件开始时间}
+    dtFileTime: TDateTime;
+    {开车时间}
+    dtKaiChe: TDateTime;
+    {文件结束时间}
+    dtFileEnd: TDateTime;
+    {组ID}
+    strGroupGUID: string;
+    //车号
+    strTrainNumber : string;
+    //车次
+    strTrainNo : string;
+    {更新类型}
+    UpdateType: TRtInfoUpdateType;
+  end;
+
+  {TRuntimeInfoList 运行记录文件列表}
+  TRuntimeInfoList = class(TObjectList)
+  protected
+    function GetItem(Index: Integer): TRuntimeInfo;
+    procedure SetItem(Index: Integer; AObject: TRuntimeInfo);
+  public
+    property Items[Index: Integer]: TRuntimeInfo read GetItem write SetItem; default;
+  end;
+  RRecordSection = record
+    dtBeginTime : TDateTime;
+    dtEndTime : TDateTime;
+    strSectionBrief : TDateTime;
+  end;
+  TRecordSectionList = array of RRecordSection;
+
+  {TRTStationInfo 分析车站信息}
+  TRTStationInfo = class
+  public
+    //站内停车对应运行记录的ID
+    nEnterRecTime : TDateTime;
+    //站内停车对应运行记录文件的序号
+    nEnterFileIndex : integer;
+    //站内停车对应运行记录文件内记录的序号
+    nEnterRecIndex : integer;
+
+    //站内开车对应运行记录的ID
+    nLeaveRecDime : TDateTime;
+    //站内开车对应运行记录文件的序号
+    nLeaveFileIndex : integer;
+    //站内开车对应运行记录文件内记录的序号
+    nLeaveRecIndex : integer;
+    
+    {进站时间}
+    dtEnterTime: TDateTime;
+    {出站时间}
+    dtLeaveTime: TDateTime;
+    {交路号}
+    nJl: Integer;
+    {车站号}
+    nStation: Integer;
+    {TMIS号}
+    nTmis: Integer;
+    {是否为对标站}
+    bIsDuiBiao: Boolean;
+    {车型}
+    cx: string;
+    {车号}
+    ch: string;
+    {车次}
+    cc: string;
+    procedure SetJSON(Value: string);
+    function GetJSON(): string;
+  public
+    {功能:复制数据}
+    procedure Clone(Source: TRTStationInfo);
+    property JSON: string read GetJSON write SetJSON;
+  end;
+
+  {TRTStationList 分析车站信息列表}  
+  TRTStationList = class(TObjectList)
+  protected
+    function GetItem(Index: Integer): TRTStationInfo;
+    procedure SetItem(Index: Integer; AObject: TRTStationInfo);
+    function GetJSON(): string;
+    procedure SetJSON(Value: string);
+  public
+    function First: TRTStationInfo;
+    function Last: TRTStationInfo;
+    property JSON: string read GetJSON write SetJSON; 
+    property Items[Index: Integer]: TRTStationInfo read GetItem write SetItem; default;
+  end;
+  //出入库类型
+  RRsDepots = record
+    bHasData : boolean;
+    strTrainTypeName : string;
+    strTrainNumber  : string;
+    dtCreateTime : TDateTime;
+  end;
+  TRsDepotArray = array of RRsDepots;
+
+  //调车停车
+  RRsLastStop = record
+    bHasData : boolean;
+    strTrainTypeName : string;
+    strTrainNumber  : string;
+    dtCreateTime : TDateTime;
+    {交路号}
+    nJl: Integer;
+    {车站号}
+    nStation: Integer;
+    {TMIS号}
+    nTmis: Integer;
+  end;
+  TRsLastStopArray = array of RRsLastStop;
+  
+  {TRTGroupRunInfo 分析一组乘务员一趟运行结果}
+  TRTGroupRunInfo = class
+  public
+    constructor Create();
+    destructor Destroy; override;
+  private
+    {开车站}
+    m_StartStation: TRTStationInfo;
+    {终到站}
+    m_StopStation: TRTStationInfo;
+    {中间停车站}
+    m_PassStations: TRTStationList;
+    {乘务员1}
+    m_TrainmanNumber1: string;
+    {乘务员2}
+    m_TrainmanNumber2: string;
+    {整组文件的开始时间}
+    m_dtFileBeginTime : TDatetime;
+    {整组文件的结束时间}
+    m_dtFileEndTime : TDatetime;
+    function GetJSON(): string;
+    procedure SetJSON(Value: string);
+  public
+    procedure Clear;
+  public
+    //出入库信息
+    DeptsArray : TRsDepotArray;
+    //入库信息
+    InDepots : RRsDepots;
+    //出库信息
+    OutDepots : RRsDepots;
+    //停车事件列表
+    StopArray : TRsLastStopArray;
+	//运行记录区间(以4小时间隔为隔断)
+    SectionList :TRecordSectionList;
+    property JSON: string read GetJSON write SetJSON;
+    property TrainmanNumber1: string read m_TrainmanNumber1 write m_TrainmanNumber1;
+    property TrainmanNumber2: string read m_TrainmanNumber2 write m_TrainmanNumber2;
+    property FileBeginTime : TDateTime read   m_dtFileBeginTime write m_dtFileBeginTime;
+    property FileEndTime : TDateTime read   m_dtFileEndTime write m_dtFileEndTime;
+    property StartStation: TRTStationInfo read m_StartStation;
+    property StopStation: TRTStationInfo read m_StopStation;
+    property PassStations: TRTStationList read m_PassStations;
+  end;
+implementation
+{ TRuntimeInfoList }
+
+function TRuntimeInfoList.GetItem(Index: Integer): TRuntimeInfo;
+begin
+  Result := TRuntimeInfo(inherited GetItem(Index));
+end;
+
+procedure TRuntimeInfoList.SetItem(Index: Integer; AObject: TRuntimeInfo);
+begin
+  inherited SetItem(Index,AObject);
+end;
+
+{ TRTStationList }
+
+function TRTStationList.First: TRTStationInfo;
+begin
+  Result := TRTStationInfo(inherited First);
+end;
+
+function TRTStationList.GetItem(Index: Integer): TRTStationInfo;
+begin
+  Result := TRTStationInfo(inherited GetItem(Index));
+end;
+
+function TRTStationList.GetJSON: string;
+var
+  iJSON: ISuperObject;
+  iItem: ISuperObject;
+  I: Integer;
+begin
+  iJSON := SO('[]');
+  for I := 0 to Count - 1 do
+  begin
+    iItem := SO(Items[i].JSON);
+    iJSON.AsArray.Add(iItem);
+    iItem := nil;
+  end;
+  Result := iJSON.AsString;
+  iJSON := nil;
+end;
+
+function TRTStationList.Last: TRTStationInfo;
+begin
+  Result := TRTStationInfo(inherited Last);
+end;
+
+procedure TRTStationList.SetItem(Index: Integer; AObject: TRTStationInfo);
+begin
+  inherited SetItem(Index,AObject);
+end;
+
+procedure TRTStationList.SetJSON(Value: string);
+var
+  iJSON: ISuperObject;
+  I: Integer;
+  StationInfo: TRTStationInfo;
+begin
+  iJSON := SO(Value);
+
+  Clear;
+  for I := 0 to iJSON.AsArray.Length - 1 do
+  begin
+    StationInfo := TRTStationInfo.Create;
+    StationInfo.JSON := iJSON.AsArray[i].AsString;
+    Add(StationInfo);
+  end;
+
+  iJSON := nil;
+end;
+
+{ TRTGroupRunInfo }
+
+procedure TRTGroupRunInfo.Clear;
+begin
+  {开车站}
+  m_StartStation.JSON := '';
+  {终到站}
+  m_StopStation.JSON := '';
+  {中间停车站}
+  m_PassStations.Clear;
+  {乘务员1}
+  m_TrainmanNumber1:= '';
+  {乘务员2}
+  m_TrainmanNumber2:= '';
+  {整组文件的开始时间}
+  m_dtFileBeginTime := 0;
+  {整组文件的结束时间}
+  m_dtFileEndTime := 0;
+  InDepots.bHasData := false;
+  InDepots.strTrainTypeName := '';
+  InDepots.strTrainNumber := '';
+  InDepots.dtCreateTime := 0;
+
+  OutDepots.bHasData := false;
+  OutDepots.strTrainTypeName := '';
+  OutDepots.strTrainNumber := '';
+  OutDepots.dtCreateTime := 0;
+
+  SetLength(StopArray,0);
+  SetLength(DeptsArray,0);
+end;
+
+constructor TRTGroupRunInfo.Create;
+begin
+  m_StartStation := TRTStationInfo.Create;
+  m_StopStation := TRTStationInfo.Create;
+  m_PassStations := TRTStationList.Create;
+  SetLength(SectionList,0);
+end;
+
+destructor TRTGroupRunInfo.Destroy;
+begin
+  m_StartStation.Free;
+  m_StopStation.Free;
+  m_PassStations.Free;
+  inherited;
+end;
+
+function TRTGroupRunInfo.GetJSON: string;
+var
+  IJson: ISuperObject;
+  ITemp: ISuperObject;
+begin
+  IJson := SO();
+
+  IJson.S['tmid1'] := m_TrainmanNumber1;
+  IJson.S['tmid2'] := m_TrainmanNumber2;
+  ITemp := SO(m_StartStation.JSON);
+  IJson.O['StartStation'] := ITemp;
+  ITemp := SO(m_StopStation.JSON);
+  IJson.O['EndStation'] := ITemp;
+  ITemp := SO(m_PassStations.JSON);
+  IJson.O['PassStation'] := ITemp;
+  Result := IJson.AsString;
+  ITemp := nil;
+  IJson := nil;
+end;
+
+procedure TRTGroupRunInfo.SetJSON(Value: string);
+var
+  IJson: ISuperObject;
+  ITemp: ISuperObject;
+begin
+  IJson := SO(Value);
+
+  m_TrainmanNumber1 := IJson.S['tmid1'];
+  m_TrainmanNumber2 := IJson.S['tmid2'];
+
+  ITemp := IJson.O['StartStation'];
+  m_StartStation.JSON := ITemp.AsString;
+
+  ITemp := IJson.O['EndStation'];
+  m_StopStation.JSON := ITemp.AsString;
+
+  ITemp := IJson.O['PassStation'];
+  m_PassStations.JSON := ITemp.AsString;
+  ITemp := nil;
+  IJson := nil;
+end;
+
+{ TRTStationInfo }
+
+procedure TRTStationInfo.Clone(Source: TRTStationInfo);
+begin
+  dtEnterTime := Source.dtEnterTime;
+  dtLeaveTime := Source.dtLeaveTime;
+  nJl := Source.nJl;
+  nStation := Source.nStation;
+  nTmis := Source.nTmis;
+  bIsDuiBiao := Source.bIsDuiBiao;
+  cc := Source.cc;
+  cx := Source.cx;
+  ch := Source.ch;
+end;
+
+function TRTStationInfo.GetJSON: string;
+var
+  iJSON: ISuperObject;
+begin
+  iJSON := SO();
+  iJSON.i['jl'] := nJl;
+  iJSON.i['station'] := nStation;
+  iJSON.i['Tmis'] := nTmis;
+  iJSON.i['jl'] := nJl;
+  iJSON.B['isDb'] := bIsDuiBiao;
+  iJSON.I['dtEnterTime'] := DelphiToJavaDateTime(dtEnterTime);
+  iJSON.I['dtLeaveTime'] := DelphiToJavaDateTime(dtLeaveTime);
+  iJSON.S['cx'] := cx;
+  iJSON.S['ch'] := ch;
+  iJSON.S['cc'] := cc;
+  //iJSON.N['recID']:
+  Result := iJSON.AsString;
+  iJSON := nil;
+end;
+
+procedure TRTStationInfo.SetJSON(Value: string);
+var
+  iJSON: ISuperObject;
+begin
+  iJSON := SO(Value);
+  nJl := iJSON.i['jl'];
+  nStation := iJSON.i['station'];
+  nTmis := iJSON.i['Tmis'];
+  nJl := iJSON.i['jl'];
+  bIsDuiBiao := iJSON.B['isDb'];
+  dtEnterTime := JavaToDelphiDateTime(iJSON.I['dtEnterTime']);
+  dtLeaveTime := JavaToDelphiDateTime(iJSON.I['dtLeaveTime']);
+  cx := iJSON.S['cx'];
+  ch := iJSON.S['ch'];
+  cc := iJSON.S['cc'];
+  iJSON := nil;
+end;
+
+end.

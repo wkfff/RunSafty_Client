@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{9E25C1E0-0BF4-4311-AC07-F9A4540E7C7E}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="RunSaftyLogic.bpl">..\..\逻辑层BPL\Source\RunSaftyLogic.bdsproj</Projects>
+      <Projects Name="RunSafty.exe">RunSafty.bdsproj</Projects>
+      <Projects Name="Targets">RunSaftyLogic.bpl RunSafty.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

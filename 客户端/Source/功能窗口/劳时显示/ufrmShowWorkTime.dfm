@@ -1,0 +1,132 @@
+object frmShowWorkTime: TfrmShowWorkTime
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = #36255#21171#26102#20449#24687
+  ClientHeight = 448
+  ClientWidth = 355
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Bevel1: TBevel
+    Left = 8
+    Top = 407
+    Width = 336
+    Height = 2
+  end
+  object Label2: TLabel
+    Left = 23
+    Top = 8
+    Width = 50
+    Height = 16
+    Caption = #36255#21171#26102':'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 23
+    Top = 30
+    Width = 65
+    Height = 16
+    Caption = #20986#21220#36741#26102':'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 23
+    Top = 52
+    Width = 65
+    Height = 16
+    Caption = #36864#21220#36741#26102':'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Bevel2: TBevel
+    Left = 8
+    Top = 74
+    Width = 336
+    Height = 2
+  end
+  object lblTangTime: TLabel
+    Left = 94
+    Top = 8
+    Width = 5
+    Height = 16
+    Caption = '-'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblBeginWorkFuShi: TLabel
+    Left = 94
+    Top = 30
+    Width = 5
+    Height = 16
+    Caption = '-'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblEndWorkFuShi: TLabel
+    Left = 94
+    Top = 52
+    Width = 5
+    Height = 16
+    Caption = '-'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 21
+    Top = 82
+    Width = 52
+    Height = 13
+    Caption = #35814#32454#35760#24405':'
+  end
+  object RzButton1: TRzButton
+    Left = 254
+    Top = 415
+    Caption = #20851#38381
+    TabOrder = 0
+    OnClick = RzButton1Click
+  end
+  object RzFlowPanel1: TRzFlowPanel
+    Left = 23
+    Top = 104
+    Width = 306
+    Height = 297
+    BorderOuter = fsNone
+    FlowStyle = fsTopBottomLeftRight
+    TabOrder = 1
+  end
+end

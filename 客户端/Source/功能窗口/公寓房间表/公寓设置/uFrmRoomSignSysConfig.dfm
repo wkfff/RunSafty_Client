@@ -1,0 +1,81 @@
+object FrmRoomSignsSysConfig: TFrmRoomSignsSysConfig
+  Left = 0
+  Top = 0
+  Caption = #31995#32479#35774#32622
+  ClientHeight = 349
+  ClientWidth = 428
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poOwnerFormCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RzPanel1: TRzPanel
+    Left = 0
+    Top = 0
+    Width = 428
+    Height = 65
+    Align = alTop
+    BorderOuter = fsNone
+    TabOrder = 0
+    object btnClose: TButton
+      Left = 144
+      Top = 13
+      Width = 137
+      Height = 46
+      Caption = #36864#20986#31995#32479#35774#32622
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = #24494#36719#38597#40657
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnCloseClick
+    end
+  end
+  object PageCtrlMain: TRzPageControl
+    Left = 0
+    Top = 65
+    Width = 428
+    Height = 284
+    ActivePage = tsUpdate
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 1
+    FixedDimension = 19
+    object tsUpdate: TRzTabSheet
+      Caption = #25968#25454#26356#26032
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = #24494#36719#38597#40657
+      Font.Style = []
+      ParentFont = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+    end
+    object tsConfig: TRzTabSheet
+      Caption = #31995#32479#35774#32622
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+    end
+    object tsMaintenance: TRzTabSheet
+      Caption = #31995#32479#32500#25252
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+    end
+  end
+end

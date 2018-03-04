@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<bwSteps>
+		<rootStep className="TBWPlanReadStep">
+			<nextStep className="TNoPlanDealerStep">
+				<nextStep className="TDrinkTestStep">
+					<nextStep className="TBWSubmitStep"/>
+				</nextStep>
+				<branchStep className="TDrinkInputStep">
+					<nextStep className="TDrinkTestStep">
+					</nextStep>
+				</branchStep>
+			</nextStep>			
+		</rootStep>
+	</bwSteps>
+	<ewSteps>
+		<rootStep className="TEWPlanReadStep">
+			<nextStep className="TNoPlanDealerStep">
+				<nextStep className="TDrinkTestStep">					
+				</nextStep>
+				<branchStep className="TDrinkInputStep">
+					<nextStep className="TDrinkTestStep">
+					</nextStep>
+				</branchStep>
+			</nextStep>			
+		</rootStep>
+	</ewSteps>
+</root>

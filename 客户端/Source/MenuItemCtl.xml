@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<出勤窗口>
+		<数据管理 visible="false">
+			<人员库管理... visible="false"/>			
+		</数据管理>
+	</出勤窗口>
+	<退勤窗口>
+		<数据管理 visible="false">
+			<人员库管理... visible="false"/>			
+		</数据管理>
+	</退勤窗口>
+</root>

@@ -1,0 +1,656 @@
+object frmOutRoom: TfrmOutRoom
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = #31163#23507#30331#35760
+  ClientHeight = 491
+  ClientWidth = 555
+  Color = clBtnFace
+  Font.Charset = GB2312_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = #23435#20307
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 16
+  object RzGroupBox1: TRzGroupBox
+    Left = 18
+    Top = 384
+    Width = 513
+    Height = 61
+    Caption = #20844#23507#20449#24687
+    TabOrder = 0
+    object Label3: TLabel
+      Left = 21
+      Top = 27
+      Width = 80
+      Height = 16
+      Caption = #20241#24687#25151#38388#65306
+    end
+    object btnCancel: TSpeedButton
+      Left = 415
+      Top = 21
+      Width = 70
+      Height = 30
+      Caption = #20851#38381
+      Flat = True
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000120B0000120B00000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFBFDFB7AB580FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6DB67453A45BD7E9D8FFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        7BC58471BE7B7AC1835BAA6447994F4191493B884235803B2F78352A702F2569
+        292163241D5E20FFFFFFFFFFFF89D1927BC8869CD5A598D3A194D09D90CE988B
+        CB9387C98E82C6897EC3847AC18076BE7C72BD78216324FFFFFFFFFFFF88D391
+        7FCC8AA2D8AB9ED6A79AD4A396D29F93CF9A8ECC9589CA9085C78B81C5877DC2
+        8278C07E256929FFFFFFFFFFFFFFFFFF83D18D80CD8B7CC9875DB86858B16253
+        A95C4DA15647994F4191493B884235803B2F78352A702FFFFFFFFFFFFFFFFFFF
+        FFFFFF7DCF886AC575FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFEFC90D699FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      Margin = 5
+      OnClick = btnCancelClick
+    end
+    object btnSave: TSpeedButton
+      Left = 309
+      Top = 21
+      Width = 100
+      Height = 30
+      Caption = #30830#35748#31163#23507
+      Flat = True
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000120B0000120B00000000000000000000F4F4F4DDDDDD
+        D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2D2
+        D2DDDDDDF4F4F4FFFFFFD3B278CF9835CF9835CF9835CF9835CF9835CF9835CF
+        9835CF9835CF9835CF9835CF9835CF9835CF9835D3B278FFFFFFCF9835F5D29A
+        CF9835FFFFFFCF9835EABC72CF9835FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCF98
+        35F5D29ACF9835FFFFFFCF9835EEBF76CF9835FFFFFFCF9835E0A341CF9835FF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFCF9835EEBF76CF9835FFFFFFCF9835F0C279
+        CF9835FFFFFFCF9835CF9835CF9835FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCF98
+        35F0C279CF9835FFFFFFCF9835F3C780CF9835FFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFCF9835F3C780CF9835FFFFFFCF9835F6CC83
+        CF9835FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCF98
+        35F6CC83CF9835FFFFFFCF9835FAD089DEA645CF9835CF9835CF9835CF9835CF
+        9835CF9835CF9835CF9835CF9835DEA645FAD089CF9835FFFFFFCF9835FED48E
+        F6BF62F6BF62F6BF62F6BF62F6BF62F6BF62F6BF62F6BF62F6BF62F6BF62F6BF
+        62FED48ECF9835FFFFFFCF9835FFDE9AFFCC72E4AD4ECF9835CF9835CF9835CF
+        9835CF9835CF9835CF9835E4AD4EFFCC72FFDE9ACF9835FFFFFFCF9835FFE39F
+        FFD278CF9835FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCF9835FFD2
+        78FFE39FCF9835FFFFFFCF9835FFE6A4FFD87ECF9835FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFCF9835FFD87EFFE6A4CF9835FFFFFFCF9835FFEAA8
+        FFDD84CF9835FFFFFFCF9835CF9835FFFFFFFFFFFFFFFFFFFFFFFFCF9835FFDD
+        84FFEAA8CF9835FFFFFFCF9835FFEEACFFE089CF9835FFFFFFCF9835CF9835FF
+        FFFFFFFFFFFFFFFFFFFFFFCF9835FFE089FFEEACCF9835FFFFFFCF9835FFF8C8
+        FFEFAFCF9835FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCF9835FFEF
+        AFFFF8C8CF9835FFFFFFE3C288CF9835CF9835CF9835CF9835CF9835CF9835CF
+        9835CF9835CF9835CF9835CF9835CF9835CF9835E3C288FFFFFF}
+      Margin = 5
+      OnClick = btnSaveClick
+    end
+    object CombRoom: TComboBox
+      Left = 94
+      Top = 23
+      Width = 129
+      Height = 24
+      AutoDropDown = True
+      BevelInner = bvNone
+      BevelOuter = bvNone
+      Ctl3D = False
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ItemHeight = 0
+      ParentCtl3D = False
+      ParentFont = False
+      TabOrder = 0
+      Text = #26410#20998#37197
+    end
+  end
+  object rzgrpbx2: TRzGroupBox
+    Left = 18
+    Top = 18
+    Width = 513
+    Height = 354
+    Caption = #31614#21040#20449#24687
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 21
+      Top = 24
+      Width = 80
+      Height = 16
+      Caption = #24453#29677#36710#27425#65306
+    end
+    object Label2: TLabel
+      Left = 262
+      Top = 86
+      Width = 80
+      Height = 16
+      Caption = #24320#36710#26102#38388#65306
+    end
+    object lblMainDriver: TLabel
+      Left = 37
+      Top = 132
+      Width = 64
+      Height = 16
+      Caption = #27491#21496#26426#65306
+    end
+    object Label4: TLabel
+      Left = 282
+      Top = 132
+      Width = 48
+      Height = 16
+      Caption = #29366#24577#65306
+    end
+    object Label5: TLabel
+      Left = 261
+      Top = 56
+      Width = 80
+      Height = 16
+      Caption = #21483#29677#26102#38388#65306
+    end
+    object Label6: TLabel
+      Left = 261
+      Top = 24
+      Width = 80
+      Height = 16
+      Caption = #21333#21452#21496#26426#65306
+    end
+    object btnMainInput: TSpeedButton
+      Left = 431
+      Top = 197
+      Width = 55
+      Height = 27
+      Caption = #24037#21495
+      OnClick = btnMainInputClick
+    end
+    object lblMainVerifyResult: TLabel
+      Left = 32
+      Top = 206
+      Width = 128
+      Height = 16
+      Caption = #39564#35777#32467#26524#65306#26410#39564#35777
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clMaroon
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 21
+      Top = 56
+      Width = 80
+      Height = 16
+      Caption = #24378#20241#26102#38388#65306
+    end
+    object Label8: TLabel
+      Left = 21
+      Top = 86
+      Width = 80
+      Height = 16
+      Caption = #20986#21220#26102#38388#65306
+    end
+    object Label10: TLabel
+      Left = 17
+      Top = 162
+      Width = 80
+      Height = 16
+      Caption = #20837#23507#26102#38388#65306
+    end
+    object Label11: TLabel
+      Left = 256
+      Top = 164
+      Width = 80
+      Height = 16
+      Caption = #31163#23507#26102#38388#65306
+    end
+    object edtTrainNo: TEdit
+      Left = 94
+      Top = 22
+      Width = 150
+      Height = 22
+      Color = 15330541
+      Ctl3D = False
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentCtl3D = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object edtStartTime: TEdit
+      Left = 337
+      Top = 84
+      Width = 150
+      Height = 22
+      Color = 15330541
+      Ctl3D = False
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentCtl3D = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+    end
+    object edtMainDriver: TEdit
+      Left = 93
+      Top = 131
+      Width = 150
+      Height = 22
+      Color = 15330541
+      Ctl3D = False
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentCtl3D = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object edtMainDriverState: TEdit
+      Left = 337
+      Top = 131
+      Width = 150
+      Height = 22
+      Color = 15330541
+      Ctl3D = False
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentCtl3D = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object edtCallTime: TEdit
+      Left = 337
+      Top = 54
+      Width = 150
+      Height = 22
+      Color = 15330541
+      Ctl3D = False
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentCtl3D = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 4
+    end
+    object edtTrainmanTypeName: TEdit
+      Left = 337
+      Top = 22
+      Width = 150
+      Height = 22
+      Color = 15330541
+      Ctl3D = False
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentCtl3D = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 5
+    end
+    object Panel1: TPanel
+      Left = 21
+      Top = 117
+      Width = 466
+      Height = 2
+      BevelOuter = bvLowered
+      TabOrder = 6
+    end
+    object Panel2: TPanel
+      Left = 20
+      Top = 230
+      Width = 466
+      Height = 2
+      BevelOuter = bvLowered
+      TabOrder = 7
+    end
+    object edtSigninTime: TEdit
+      Left = 94
+      Top = 54
+      Width = 150
+      Height = 22
+      Color = 15330541
+      Ctl3D = False
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentCtl3D = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 8
+    end
+    object edtOutDutyTime: TEdit
+      Left = 94
+      Top = 84
+      Width = 150
+      Height = 22
+      Color = 15330541
+      Ctl3D = False
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentCtl3D = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 9
+    end
+    object edtMainInTime: TEdit
+      Left = 93
+      Top = 163
+      Width = 150
+      Height = 22
+      Color = 15330541
+      Ctl3D = False
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentCtl3D = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 10
+    end
+    object edtMainOutTime: TEdit
+      Left = 335
+      Top = 163
+      Width = 150
+      Height = 22
+      Color = 15330541
+      Ctl3D = False
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentCtl3D = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 11
+    end
+    object pSubDriver: TPanel
+      Left = 10
+      Top = 241
+      Width = 488
+      Height = 99
+      BevelOuter = bvNone
+      TabOrder = 12
+      object lblSubDriver: TLabel
+        Left = 25
+        Top = 11
+        Width = 64
+        Height = 16
+        Caption = #21103#21496#26426#65306
+      end
+      object Label9: TLabel
+        Left = 8
+        Top = 40
+        Width = 80
+        Height = 16
+        Caption = #20837#23507#26102#38388#65306
+      end
+      object lblSubVerifyResult: TLabel
+        Left = 12
+        Top = 73
+        Width = 128
+        Height = 16
+        Caption = #39564#35777#32467#26524#65306#26410#39564#35777
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -16
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label12: TLabel
+        Left = 247
+        Top = 42
+        Width = 80
+        Height = 16
+        Caption = #31163#23507#26102#38388#65306
+      end
+      object lblSubDriverState: TLabel
+        Left = 277
+        Top = 11
+        Width = 48
+        Height = 16
+        Caption = #29366#24577#65306
+      end
+      object btnSubInput: TSpeedButton
+        Left = 422
+        Top = 67
+        Width = 55
+        Height = 27
+        Caption = #24037#21495
+        OnClick = btnSubInputClick
+      end
+      object edtSubDriver: TEdit
+        Left = 84
+        Top = 9
+        Width = 150
+        Height = 22
+        Color = 15330541
+        Ctl3D = False
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentCtl3D = False
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object edtSubInTime: TEdit
+        Left = 84
+        Top = 41
+        Width = 150
+        Height = 22
+        Color = 15330541
+        Ctl3D = False
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentCtl3D = False
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object edtSubDriverState: TEdit
+        Left = 326
+        Top = 9
+        Width = 150
+        Height = 22
+        Color = 15330541
+        Ctl3D = False
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentCtl3D = False
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object edtSubOutTime: TEdit
+        Left = 326
+        Top = 41
+        Width = 150
+        Height = 22
+        Color = 15330541
+        Ctl3D = False
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentCtl3D = False
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 3
+      end
+    end
+  end
+  object pAlarm: TPanel
+    Left = 49
+    Top = 446
+    Width = 445
+    Height = 39
+    BevelOuter = bvNone
+    TabOrder = 2
+    Visible = False
+    object lblErrorAlarm: TLabel
+      Left = 55
+      Top = 14
+      Width = 392
+      Height = 16
+      Caption = #36317#31163#21483#29677#26102#38388#36824#26377#24456#38271','#35831#30830#35748#24744#26159#19981#26159#25353#38169#20102#65281#65281#65281#65281
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+    end
+    object Image1: TImage
+      Left = 17
+      Top = 7
+      Width = 32
+      Height = 32
+      AutoSize = True
+      Picture.Data = {
+        0A54504E474F626A65637489504E470D0A1A0A0000000D494844520000002000
+        0000200806000000737A7AF40000001974455874536F6674776172650041646F
+        626520496D616765526561647971C9653C000008594944415478DA9D97096CD3
+        D71DC7BF7FDF4E623B8E13C7B94A6EC739E90209844B81868D415AD4B59D58D5
+        814655C6A4765B37B5ABE8344D6B35A8AA1636AD40D79643A36C082A568E71A8
+        493712DAB2D21C84DCE420779CC3B193F8F67FBFF7B7BDDA694C699FF412F91D
+        BFF779BFEBFDFE1CEEB31D5A9AA5CE50C89E96F0FC7611F862F081092EF087E3
+        E0E3B8662FB863BD0EE73BBB1ABAADF72397FBBAF993CB8C997A317756269316
+        263D58044D5A0A62530D108924E05D6EF83C6EF01E0FDCF679580646601D3363
+        A277001EAFB765CCEDDDBAEDBFED3D2487FF3600E2AB2B4C6F2924E26772ABBF
+        077D4921E0F5D2B0884D0937064F727D7CE03FCDCDCDC2659D81CB3285F1DE7E
+        0CB775C3E9E3DF7EA8BEE567B4C9FB4D00A435E579FDFABCECA482C71FA1F364
+        74AE14AEF616CCB5B7C27EB7171ECB7440F51000241A2D94694B10939D07697A
+        269CA3A48DBE1E0C76DCC18CC5365259776B09AD74DF0F80F4A3E5C63ED3C31B
+        9393562CA79B89E0E9BF8BF10F4FC1679B0524627022EA5CF8569E20789F4FD0
+        84383A06FA8736431C1B8BA95BCD18EF1FC0E88879B8B2BE257D2104F795C3CB
+        F2EE9AAAAB0C49E5CB48AA14D62B1760BDF9194432997030820733B5877A62C8
+        38CFFBC0BB3D5017954055B61A939F7D8AF1BB03189B981EADAC6B7920142214
+        407CB13CEF709A317B67E1534F90C524B05C388BF9B616705269E0F0C04AAF07
+        3EA7137039FDBF657288E47292200940C00F41CE199D950BCDCA3518AFAD45FF
+        C01026E71DEF6EBA7E7B57D0278222B97D05E9792BE3625AD7BCF87352B312B6
+        9A2B986DFC826E2E25FB8BBFC42435F30E3BD4BB5E40D4633B84A1F9D347613D
+        FC1A388592D68AC2D6FA084295978F989C02F45DBE84418B0D9F4CCDE6BFD0D2
+        D3CE508300B2AB65798DC53FD86CD21717C33B380CF39993E0E401B58736B2B1
+        8F3CDD50D319363CBA3E1722B5261C969DE0F36B22B1F2BB981D37A3BFA111E3
+        7677DB86BAE6A534ED12001E4DD625FF322B7968F59E5FD10E09268E1C024F2A
+        E624E2AFBA0985A26F660AFA9AAEB0E1F1F5391069E2C80C0B801904ED6126D2
+        556D41DF99D3189C75627FCF70CA99A18961265D7C6A59EE4BDFA958F687AC8D
+        EBE1E91BC4F4E5F382D385A93314C03A8D84AB6D61C3E62A136940BB2880E098
+        E437DAE5AB30DDD58DFEAE3BE8F1F0BF7DE2D3D63F3200E5A532E3CDD2C7AB4D
+        F1A67CCC7D5C0B474F37399E64F1280D9820FEEC0D80D99C35F28989AD658B9A
+        20540BCAE4348835F1E8B87A05635245DBC66BCDA5EC046D6DB9716AF52F9E81
+        44A583E5EF7FA314EB5AFC2641C79AB522F6CF2721CE30FA95D2DB01CBB3DB20
+        8A512FAEB5C03E11F994A67C1D5ADFF92B262871ADFBB8318E0124D49619C7D7
+        3EBF9B0450E238F236A95F7E4F413CA55CD5AB0721292C15863C2D3761DBB31B
+        1C25A088FB8266D8B019ADFBDFC484DEC000F40C404F00636B9E7D9A32573CA6
+        8F1FF1C734C74506A08747F9E42EC81FFDB130E4FCE038EC270E835346DD1B80
+        CC17BBAE0AB75F7F039329290C20D10F506E1CABD8B503325D22AC278F8393DD
+        038025188703F2277F0AF9C3DBFC001F9E84F3C421CA030ADA171980C1AB5657
+        A279DF6B9849CFC0DADA862040DE58C5CE1F41A64F81EDD4FBE480B27BDE8465
+        40516E3EA27EF7276168FEF7CFC1D7D92A64C4C8E07E80988AB568DEBB0F3319
+        9921002B4C63CBB76D45745A06E62EFD8B8CEA8E0CC09ADB0DB1A9188A17F70A
+        3F1DFB7E036F5B33BD24D2C87B0880934811955F84E6FD07C2349070A1DC545F
+        B2B62C27B968293C9D1D708F0C458E82801F302DF081B74030D9BD1C37603A99
+        361E2E0F8FB64B97608E4BE8DA54D7BC4A08C3BF1467BD5C59627C3E73651964
+        24DB416F80F0B04452272B4C5C0E7FB80A00643299E26BA195195918BAFE0986
+        8687F1854FFAC6EE86CE57844454A08E321D2CC9BEB97453255419B970D65FA3
+        FC1DC10C7413509A96FC7027241BB70A439E2B67E1F9C7BB80103D8BEDE1A99E
+        9142462F63EB5B07316948C2EE86EED2DBD6B936211553375C5C91F71F639129
+        33A5B090E428E06A6CF0DF68A11698FA290FC88E5E081B76EDD80C44CA034CFD
+        E959986C6A425F5333CC1A6DCFA6BA5B6B696634283DF6FB06EDEA977252CF19
+        979720BEA00818198187BA2030144200B041FADEF970BFFCC91602502D00F0D7
+        8B12AD0E3E3269CBD163B03EB0047B3B06AA2F8E4ED5D102CBFF9F63EA49C74B
+        730F141A748F2C316621AEA414BEDE1EF8A6A6FC00A19590D301D163DB21DAB0
+        C5CFF4D179F84E1F231328C26169AD58AD06A78B47FB7B47304D6FC71D88FFF9
+        D48D362A3A3082E0730CFFAB43FA43C6958A829AD464BD2E21C980F80729D58E
+        0CC36B367F09118867B85D42380A8D855F307784808A63E975D468D075E27DCC
+        38DDB0686327ABFEDDB49E667BA9CF22A42041C01774D4332F57149C4BD5C7C5
+        EBA8A8D49796FA0BDFC141E1450BBD5D580BD11247BEC3E913E0B5CDA1EBCC07
+        9825C79C56C74E6CBCD6544DD3EC3B61120B4AB2606399249E69E2F2AA82735A
+        A5222E214A8EB85C23D4D9D980DD41DC364A7D76D282277C3B0B5B05454154B4
+        E0BC939F7F8EC1FAEBB0EB1361932BA70287B39B4F204251BA1062C9D152E3CB
+        59D1F2CD1A99042AAA8EA20D8950A5A441613050DD28F16B817576730ACD79AA
+        7CA7BB3A31D3D90D3B3DBDF3713AF4DA9D17B6DF687F85E4F52F3C3C12401042
+        CBC2B33221B6F0D739A9AFAAC5A27425EF8594F283849C104E97507A7B991F30
+        08B2BF5BA984971E24A74A0D9B97EF7BBDE3EE9E5AB3A585851BF569DCE78749
+        A84F4405FC222155294F7C2E27A53A5F155DA5928A33424504FDCEEAF2F6B6D9
+        E6AE1EE81A3C3768778ED1903960EF797CC34FB3D0796900848C0B2A79407517
+        582DB630E35068809C03338C85FA5CE06076EB6FF571BA984658BEA060C76205
+        233B847926D907AE48375ED8FE07EA496E0A843EDBFC0000000049454E44AE42
+        6082}
+    end
+  end
+  object actLstLogin: TActionList
+    Left = 432
+    Top = 65528
+    object actCancel: TAction
+      Caption = 'Esc'#20107#20214
+      ShortCut = 27
+      OnExecute = actCancelExecute
+    end
+    object actEnter: TAction
+      Caption = #22238#36710#20107#20214
+      ShortCut = 13
+      OnExecute = actEnterExecute
+    end
+  end
+end

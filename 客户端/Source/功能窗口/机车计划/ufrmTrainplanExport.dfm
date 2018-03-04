@@ -1,0 +1,141 @@
+object frmTrainplanExport: TfrmTrainplanExport
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = #23548#20986#26426#36710#35745#21010
+  ClientHeight = 142
+  ClientWidth = 422
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RzProgressBar1: TRzProgressBar
+    Left = 8
+    Top = 111
+    Width = 401
+    BorderOuter = fsFlat
+    BorderWidth = 0
+    FlatColor = 7960953
+    FlatColorAdjustment = 0
+    FrameController = GlobalDM.FrameController
+    InteriorOffset = 0
+    PartsComplete = 0
+    Percent = 0
+    TotalParts = 0
+  end
+  object RzGroupBox1: TRzGroupBox
+    Left = 8
+    Top = 8
+    Width = 401
+    Height = 97
+    Caption = #26102#38388#33539#22260
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 24
+      Top = 46
+      Width = 52
+      Height = 13
+      Caption = #24320#22987#26102#38388':'
+    end
+    object Label2: TLabel
+      Left = 24
+      Top = 72
+      Width = 52
+      Height = 13
+      Caption = #32467#26463#26102#38388':'
+    end
+    object PngSpeedButton1: TPngSpeedButton
+      Left = 284
+      Top = 42
+      Width = 77
+      Height = 48
+      Caption = #23548#20986
+      Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = PngSpeedButton1Click
+    end
+    object Label3: TLabel
+      Left = 24
+      Top = 18
+      Width = 28
+      Height = 13
+      Caption = #20132#36335':'
+    end
+    object dtBeginDate: TRzDateTimePicker
+      Left = 82
+      Top = 42
+      Width = 95
+      Height = 21
+      Date = 41593.558116319440000000
+      Time = 41593.558116319440000000
+      TabOrder = 1
+      FrameController = GlobalDM.FrameController
+      FramingPreference = fpCustomFraming
+    end
+    object dtBeginTime: TRzDateTimePicker
+      Left = 183
+      Top = 42
+      Width = 95
+      Height = 21
+      Date = 41593.000000000000000000
+      Time = 41593.000000000000000000
+      Kind = dtkTime
+      TabOrder = 2
+      FrameController = GlobalDM.FrameController
+      FramingPreference = fpCustomFraming
+    end
+    object dtEndDate: TRzDateTimePicker
+      Left = 82
+      Top = 69
+      Width = 95
+      Height = 21
+      Date = 41593.558116319440000000
+      Time = 41593.558116319440000000
+      TabOrder = 3
+      FrameController = GlobalDM.FrameController
+      FramingPreference = fpCustomFraming
+    end
+    object dtEndTime: TRzDateTimePicker
+      Left = 183
+      Top = 69
+      Width = 95
+      Height = 21
+      Date = 41593.999988425930000000
+      Time = 41593.999988425930000000
+      Kind = dtkTime
+      TabOrder = 4
+      FrameController = GlobalDM.FrameController
+      FramingPreference = fpCustomFraming
+    end
+    object cbbJiaoLu: TRzComboBox
+      Left = 82
+      Top = 15
+      Width = 196
+      Height = 21
+      Ctl3D = False
+      FrameController = GlobalDM.FrameController
+      ItemHeight = 13
+      ParentCtl3D = False
+      TabOrder = 0
+    end
+  end
+  object SaveDialog: TSaveDialog
+    DefaultExt = '.xls'
+    Filter = '*.xls|*.xls|*.xlsx|*.xlsx'
+    Left = 368
+    Top = 16
+  end
+end

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015-08-28 13:38:39.593.pas,D:\用户目录\Documents\Borland Studio Projects\Unit3.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\逻辑层BPL\Source\Debug\LCDebug.pas</Transaction>
+    <Transaction>2015-08-28 13:38:39.593.dfm,D:\用户目录\Documents\Borland Studio Projects\Unit3.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\逻辑层BPL\Source\Debug\LCDebug.dfm</Transaction>
+    <Transaction>2015-08-28 13:38:56.733.bdsproj,D:\用户目录\Documents\Borland Studio Projects\Project1.bdsproj=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\逻辑层BPL\Source\Debug\RsLCDebug.bdsproj</Transaction>
+    <Transaction>2015-08-28 13:39:26.638.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\逻辑层BPL\Source\Debug\LCDebug.pas=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\逻辑层BPL\Source\Debug\uFrmMain.pas</Transaction>
+    <Transaction>2015-08-28 13:39:26.638.dfm,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\逻辑层BPL\Source\Debug\LCDebug.dfm=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\逻辑层BPL\Source\Debug\uFrmMain.dfm</Transaction>
+    <Transaction>2015-08-28 13:54:41.426.pas,D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\逻辑层BPL\Source\数据定义\uMealTicketManager.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

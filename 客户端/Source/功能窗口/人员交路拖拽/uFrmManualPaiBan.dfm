@@ -1,0 +1,202 @@
+object frmManualPaiban: TfrmManualPaiban
+  Left = 0
+  Top = 0
+  BorderStyle = bsSizeToolWin
+  Caption = #35831#36873#25321#20154#21592#20132#36335#25110#36873#25321#26426#32452
+  ClientHeight = 537
+  ClientWidth = 492
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 492
+    Height = 537
+    Align = alClient
+    BevelOuter = bvNone
+    BorderWidth = 5
+    TabOrder = 0
+    object RzPanel1: TRzPanel
+      Left = 5
+      Top = 5
+      Width = 482
+      Height = 41
+      Align = alTop
+      BorderOuter = fsFlatRounded
+      BorderSides = [sdLeft, sdTop, sdRight]
+      TabOrder = 0
+      DesignSize = (
+        482
+        41)
+      object btnPaiban: TPngSpeedButton
+        Left = 278
+        Top = 10
+        Width = 114
+        Height = 25
+        Anchors = [akTop, akRight]
+        Caption = #36718#20056#27966#29677
+        OnClick = btnPaibanClick
+        PngImage.Data = {
+          89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+          610000001974455874536F6674776172650041646F626520496D616765526561
+          647971C9653C000003554944415478DA6D936D685B5518C7FFE79E7B939BA46D
+          D2AE6FA95DE7A28EB9F936D69751EC563B17DD40FD30D46F6EB0C23EE89CAC5D
+          F10551A2B8312C9309431888A0A8681014111D8AED5E185437575CB376EB9D6B
+          D2B7246D9334B9F726B9F7E6786ED6C9841D783E1C9EE7FC7E0FE73C871CEEA9
+          81BD1803DC1522B49C09C2F72541845032512AB1B5924CAEFB1B3D54CD3324E2
+          9A25096C1D21E4867D8EDC09903D145AD6B0013E264A69CA01050B85EEAE0647
+          4555233259E0CF4BD34825162C8152F17F006E0A386461A2C9EF11731A433CAE
+          E54558D51089DED6DA8CAAEAB558CA50442251CC4C2990248937C10187B6AF2A
+          DB2DD332BBBB1A6985D78FCC32E3A6192CCC27A66597D1BCEFB53D90DD3ED437
+          AC422EA7E2AD978FC1293B3940007973575D1960144D5636D5AC98C6A29852AE
+          810AFAD5CF86BF7830139DC3D2521ABAAAE3E8C0F1A4DBE5ACA7E080FE277D28
+          71405E2FB25EDBE4E2263F37657318E83D826F94C286A9DFDF89D8B6543A83A5
+          F8225E3FFE7377FFF39B86AFACCE80F46D2128321139D54C7C7AF6CBBAFF4CB9
+          3CDE3B706CE2DE81873B3B5C8F456A456FC3ECDC3CAEC426935A8BB955969DE3
+          9451909E4FD23818DB860FC2D16DDF9EDC3F44A813A9D43216E7E3F86D7134F6
+          40DB96D5EDDE7624C747A04CDE44CEDD84EA560FC646CF8F8AD4B195043FBA0E
+          8BBA6159E6FA7D35E1330172AD6E7A368E0B892A6C7A2188FBEF8921E07B16F5
+          9E0D503540495C80265D042938F17DF864890407C72A8B8C9E0D3E52FFE8D395
+          C350C7BF83A2FC8379B913465B08E722A7B1B9E50442CFFC82AC5AC089A11D30
+          5044CFC6BDF8297C0A64FBD1CB2CB43B00974746738D845A07A0EA3A6EA68A30
+          A817D965037D5FFD81DD0FBD0B93B9B0AC272150091BD774E0F2D0AF20CF0DFE
+          C50EEC0CE0F41483448150B70495F77A6444E2AF43105C2362FF2905BD8FF721
+          6F38E090DCB027C8D48A585462201D6F9C617B9F5A8F91A80EC3E203552A0F26
+          44810707B6B778F0FED79378B1E9257E5755B00AEC560121E68D89743F69DCF3
+          03DBD1B90EB53E4F79A0B092B73F846D5A486BF8F1DC0C529F3FD15AE777BB93
+          739AB65261572AA4B2EBF041D6B0F943C698C86E1FBECDB0BF25A1A639FBF7A1
+          5776863F1E7CFBAAF06AA8BD7467DE2EF1F2B8EF96F3AEAB6CE291B95BF25F34
+          A674951AE560010000000049454E44AE426082}
+        ExplicitLeft = 280
+      end
+      object PngSpeedButton1: TPngSpeedButton
+        Left = 398
+        Top = 10
+        Width = 73
+        Height = 25
+        Anchors = [akTop, akRight]
+        Caption = #20851#38381
+        OnClick = PngSpeedButton1Click
+        PngImage.Data = {
+          89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+          61000001EF4944415478DAA5933F48425114C63FA322891C72A8C0A1081B0429
+          FB334814FA428A1A8AA0969686A0B5A94930A1A9A93568686929081B8A42B247
+          110EFDB1101C92A841A8061B8C302A7A1DBFABD20B5AEAC1E19CF7CEF7FD2EF7
+          DEF32C8661E03F8F8580D940A15E900849F825F45FF43E89438930F52B5105F8
+          9CD168AE181CC4E7FE7E41E8AF588D9920A2A1F99B262C9A0502DEA6FB8DEA91
+          11E0FD1DA8AAC2DBCE0E21D56B4784489FE69F1AE95B08C84F7929B006026AB9
+          DA5AE4231114B703F6C6C6809717BEE4A351F6ACEB719D80DC4457797FB68101
+          65B1DB91DBD860699B9C04B259D6B983831258B76D9EAB33781A75A37E3B59C8
+          84D4FB7C0AE270A89CC9303DE9DC915FB47AC943C0E3501B1AF6AE29929A9086
+          BE3ED3F13F1E1FD32C3ABDA8A387808CD60C47EC4E2DA63513E0181F071E1E94
+          BBB11199AD2D0244A71775F41070DBDB849693FB42A6B9656E0E88C7CD13E0F5
+          E276799910D1EA250F01E91E7BF9109DF3F3402C464FFAEC8CD9D9DDAD209A86
+          F4D252F9109DA7590548B5D7D1EC0A0681DD5D6A531717A66B747576AA6A7818
+          A9C545F65C57CFEA1A93AE1AC31D96E954778F642241813BF5CAFD4A9F0BB83D
+          1E05919948864290BE1AA4445B2547D9D3D181C4E525CD529B4659BE13F24D13
+          F65C7FA8513E6FB5FCE967EABA318A7FE33F9E2F003BF4E1698CA12900000000
+          49454E44AE426082}
+        ExplicitLeft = 400
+      end
+      object Label1: TLabel
+        Left = 16
+        Top = 14
+        Width = 72
+        Height = 13
+        Caption = #36718#20056#20132#36335#21015#34920
+      end
+    end
+    object RzPanel2: TRzPanel
+      Left = 5
+      Top = 46
+      Width = 482
+      Height = 486
+      Align = alClient
+      BorderOuter = fsFlatRounded
+      TabOrder = 1
+      object AdvSplitter1: TAdvSplitter
+        Left = 2
+        Top = 99
+        Width = 478
+        Height = 5
+        Cursor = crVSplit
+        Align = alTop
+        Appearance.BorderColor = clNone
+        Appearance.BorderColorHot = clNone
+        Appearance.Color = clWhite
+        Appearance.ColorTo = clSilver
+        Appearance.ColorHot = clWhite
+        Appearance.ColorHotTo = clGray
+        GripStyle = sgDots
+        ExplicitWidth = 200
+      end
+      object checklstTrainmanJiaolu: TRzCheckList
+        Left = 2
+        Top = 2
+        Width = 478
+        Height = 97
+        Items.Strings = (
+          '111111111111111'
+          '222222222222222222'
+          '333333333333333')
+        Items.ItemEnabled = (
+          True
+          True
+          True)
+        Items.ItemState = (
+          0
+          0
+          0)
+        OnChange = checklstTrainmanJiaoluChange
+        Align = alTop
+        BorderStyle = bsNone
+        ItemHeight = 17
+        TabOrder = 0
+      end
+      object viewGroup: TListView
+        Left = 2
+        Top = 104
+        Width = 478
+        Height = 380
+        Align = alClient
+        BorderStyle = bsNone
+        Columns = <
+          item
+            Caption = #24207#21495
+            Width = 40
+          end
+          item
+            Caption = #21496#26426
+            Width = 100
+          end
+          item
+            Caption = #21103#21496#26426
+            Width = 100
+          end
+          item
+            Caption = #23398#21592
+            Width = 100
+          end
+          item
+            AutoSize = True
+            Caption = #21487#20986#21220#26102#38388
+          end>
+        DragMode = dmAutomatic
+        ReadOnly = True
+        RowSelect = True
+        TabOrder = 1
+        ViewStyle = vsReport
+        OnStartDrag = viewGroupStartDrag
+      end
+    end
+  end
+end

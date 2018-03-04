@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packages version="1.4.5.519">
+  
+  <package id="RsDialogs.dll" version="1.0.0.307" brief="运安对话框类库" />
+  <package id="RsNameplateLib.dll" version="1.0.0.307" brief="电子名牌类库" />
+  <package id="RsGlobal.dll" version="1.0.0.307" brief"基础信息类库" />
+
+  <package id="WorkTimeQuery.dll" version="0" brief"劳时查询封装" />
+  <package id="WorkFlowCtl.dll" version="0" brief"出勤流程封装" />
+
+
+  <package id="fbclient.dll" version="2.5.0.24643" brief"firebird数据库客户端" />
+  <package id="GDS32.DLL" version="6.3.26540" brief"interbase数据库客户端" />
+  <package id="Lattices.dll" version="1.0.0.0" brief"测酒仪数模转换类库" />
+</packages>

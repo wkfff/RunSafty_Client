@@ -1,0 +1,360 @@
+object frmQueryLeaderExam: TfrmQueryLeaderExam
+  Left = 0
+  Top = 0
+  Caption = #24178#37096#26816#26597#35760#24405#26597#35810
+  ClientHeight = 500
+  ClientWidth = 1025
+  Color = clBtnFace
+  Font.Charset = GB2312_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = #23435#20307
+  Font.Style = []
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 16
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1025
+    Height = 57
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 0
+    DesignSize = (
+      1025
+      57)
+    object Label1: TLabel
+      Left = 240
+      Top = 20
+      Width = 72
+      Height = 16
+      Caption = #26816#26597#26085#26399':'
+    end
+    object Label2: TLabel
+      Left = 445
+      Top = 21
+      Width = 16
+      Height = 16
+      Caption = #33267
+    end
+    object btnQuery: TSpeedButton
+      Left = 612
+      Top = 15
+      Width = 80
+      Height = 30
+      Caption = #26597#35810
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000120B0000120B00000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1F4F994A9
+        CBF9FAFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFB6C7E0335CA54880B94B73B3EFF2F8FFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB8C9E15184BC7DB5D77FB5
+        D65691C34572B1F5F7FBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFB9CBE2588EC18FC5DFA0D3E793C7E0619BC9466197F7F9FCFFFFFFFFFFFF
+        D8E5F183ABD15A8FC14D87BE4C85BD5286BB4C81BB87BFDBA3D5E8A5D7E980BB
+        DA3F65ACEDF1F7FFFFFFFFFFFFB9D1E6609AC86FA0CAA6C3DEE2EBF4E2EBF4A4
+        BEDC538DC179B4D699CCE38DC4DE4F83BCEDF1F8FFFFFFFFFFFFD9E7F2659FCA
+        A3C4DEFEFBF9FCF8F3FBF5EFFBF5EFFCF8F4FEFCFA5894C46FABD24073BEBBCD
+        E3FFFFFFFFFFFFFFFFFF8BB9D876AAD1FDFBF9FBF5EFFAF4ECFAF4ECFAF4EDFA
+        F4EDFBF6F0FEFCFA4F85BB6B95C5FFFFFFFFFFFFFFFFFFFFFFFF68A7CDACCCE4
+        FCF7F1FAF3EBFAF3EBFAF3EBFAF4ECFAF4ECFAF4EDFCF8F3A5BFDC5589BEFFFF
+        FFFFFFFFFFFFFFFFFFFF62A6CDE4EFF6FAF3ECFAF2EAFAF2EAFAF3EBFAF3EBFA
+        F3ECFAF4ECFBF5EFE2EBF44D87BEFFFFFFFFFFFFFFFFFFFFFFFF63A8CFE5EFF7
+        FAF3EBFAF2E9FAF2EAFAF2EAFAF3EBFAF3EBFAF3ECFBF5EEE2EBF4508BBFFFFF
+        FFFFFFFFFFFFFFFFFFFF6CADD2AED1E6FBF6F0F9F1E8F9F2E9FAF2E9FAF2EAFA
+        F3EBFAF3EBFCF7F2A7C4DF5B92C3FFFFFFFFFFFFFFFFFFFFFFFF91C2DD7DB6D7
+        FDFAF7FAF3EBF9F1E8F9F2E9FAF2E9FAF2EAFBF5EEFDFBF971A4CD84AED2FFFF
+        FFFFFFFFFFFFFFFFFFFFDCECF470B0D4A9CFE5FDFAF7FBF5EFFAF2EAFAF3EBFB
+        F6F1FDFBF9A3C5DF639BC9D8E6F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFDCEC
+        70B0D47DB7D7AFD1E6E5F0F7E4EFF6ACCEE477ADD267A1CCBAD3E7FFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDCECF491C3DD6DAED265A9CF63A7CE6A
+        A8D08CBBD9DAE8F3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      Margin = 5
+      OnClick = btnQueryClick
+    end
+    object btnCancel: TSpeedButton
+      Left = 940
+      Top = 11
+      Width = 80
+      Height = 30
+      Anchors = [akTop, akRight]
+      Caption = #20851#38381
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000120B0000120B00000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFBFDFB7AB580FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6DB67453A45BD7E9D8FFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        7BC58471BE7B7AC1835BAA6447994F4191493B884235803B2F78352A702F2569
+        292163241D5E20FFFFFFFFFFFF89D1927BC8869CD5A598D3A194D09D90CE988B
+        CB9387C98E82C6897EC3847AC18076BE7C72BD78216324FFFFFFFFFFFF88D391
+        7FCC8AA2D8AB9ED6A79AD4A396D29F93CF9A8ECC9589CA9085C78B81C5877DC2
+        8278C07E256929FFFFFFFFFFFFFFFFFF83D18D80CD8B7CC9875DB86858B16253
+        A95C4DA15647994F4191493B884235803B2F78352A702FFFFFFFFFFFFFFFFFFF
+        FFFFFF7DCF886AC575FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFEFC90D699FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      Margin = 5
+      OnClick = btnCancelClick
+    end
+    object Label3: TLabel
+      Left = 10
+      Top = 18
+      Width = 80
+      Height = 16
+      Caption = #26816#26597#21306#22495#65306
+    end
+    object btnPrint: TPngSpeedButton
+      Left = 852
+      Top = 11
+      Width = 80
+      Height = 30
+      Anchors = [akTop, akRight]
+      Caption = #25171#21360
+      OnClick = btnPrintClick
+      PngImage.Data = {
+        89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+        610000001974455874536F6674776172650041646F626520496D616765526561
+        647971C9653C0000018C4944415478DAA593CB4B424114C6BFE3836B2B339795
+        1AAD6A5792D4AA82C847994414F49F44D02A2289DE85F4205A064A845A6A1154
+        ABA2B076B9CCAC9666AEBA17F54EF766A10BCBE21E988181F3FDCEF966CE1063
+        0C4A821403B6777651288850A9483E338EE37E150882F0A9134506B55A5504E4
+        7279302632F7E000928FA95F0116B309E1C32310A948ABD58036B777F0CE0B6C
+        64D8838764514C5459FCEDB6C962C2FE4110353A8EC8B7B1E51F1F1B1DCDE5F3
+        A58CAAC6095A8D067BFE408056D77D6CC8ED463476F25DA79AFA73773AFA110A
+        87414B2B6BCCE572E2F2EA1A7DBD3DC52EA8945866A0C896AA9F9E9DA3ABD386
+        48240A9A5F5C660EBB1DF789046C562B6E6EEFA41CAA08909FBCA3BD0DD7F138
+        5A5B5A103B3E0679E71698D361C763EA09A6867A64B2D92F40A54B6430E8F548
+        3DBFC06C6A946C4B8099D939E6723AF09AC9209D4EFF282E87188D46D4190C88
+        4463A0E9192FF37886C0F3FCDF5EE02B743A1D82C110686272EA5C9ABEEEFF8E
+        B4DCA934951772BFCDD2AAFD97BA146FCA3F9352C007EEB19F2080CD7ED00000
+        000049454E44AE426082}
+    end
+    object btnToExcel: TPngSpeedButton
+      Left = 721
+      Top = 11
+      Width = 123
+      Height = 30
+      Anchors = [akTop, akRight]
+      Caption = #21478#23384#20026'Excel'
+      OnClick = btnToExcelClick
+      PngImage.Data = {
+        89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+        610000001974455874536F6674776172650041646F626520496D616765526561
+        647971C9653C0000018C4944415478DAA593CB4B424114C6BFE3836B2B339795
+        1AAD6A5792D4AA82C847994414F49F44D02A2289DE85F4205A064A845A6A1154
+        ABA2B076B9CCAC9666AEBA17F54EF766A10BCBE21E988181F3FDCEF966CE1063
+        0C4A821403B6777651288850A9483E338EE37E150882F0A9134506B55A5504E4
+        7279302632F7E000928FA95F0116B309E1C32310A948ABD58036B777F0CE0B6C
+        64D8838764514C5459FCEDB6C962C2FE4110353A8EC8B7B1E51F1F1B1DCDE5F3
+        A58CAAC6095A8D067BFE408056D77D6CC8ED463476F25DA79AFA73773AFA110A
+        87414B2B6BCCE572E2F2EA1A7DBD3DC52EA8945866A0C896AA9F9E9DA3ABD386
+        48240A9A5F5C660EBB1DF789046C562B6E6EEFA41CAA08909FBCA3BD0DD7F138
+        5A5B5A103B3E0679E71698D361C763EA09A6867A64B2D92F40A54B6430E8F548
+        3DBFC06C6A946C4B8099D939E6723AF09AC9209D4EFF282E87188D46D4190C88
+        4463A0E9192FF37886C0F3FCDF5EE02B743A1D82C110686272EA5C9ABEEEFF8E
+        B4DCA934951772BFCDD2AAFD97BA146FCA3F9352C007EEB19F2080CD7ED00000
+        000049454E44AE426082}
+    end
+    object dtpBeginDate: TDateTimePicker
+      Left = 315
+      Top = 17
+      Width = 121
+      Height = 24
+      Date = 40880.000000000000000000
+      Format = 'yyyy-MM-dd'
+      Time = 40880.000000000000000000
+      TabOrder = 0
+    end
+    object dtpEndDate: TDateTimePicker
+      Left = 470
+      Top = 17
+      Width = 121
+      Height = 24
+      Date = 40880.999988425930000000
+      Format = 'yyyy-MM-dd'
+      Time = 40880.999988425930000000
+      TabOrder = 1
+    end
+    object CombArea: TRzComboBox
+      Left = 89
+      Top = 17
+      Width = 140
+      Height = 24
+      Style = csDropDownList
+      ItemHeight = 0
+      TabOrder = 2
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 481
+    Width = 1025
+    Height = 19
+    Panels = <>
+  end
+  object strGridExam: TAdvStringGrid
+    Left = 0
+    Top = 57
+    Width = 1025
+    Height = 424
+    Cursor = crDefault
+    Align = alClient
+    ColCount = 6
+    FixedCols = 0
+    FixedRows = 0
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine]
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 2
+    ActiveCellFont.Charset = DEFAULT_CHARSET
+    ActiveCellFont.Color = clWindowText
+    ActiveCellFont.Height = -11
+    ActiveCellFont.Name = 'Tahoma'
+    ActiveCellFont.Style = [fsBold]
+    ColumnHeaders.Strings = (
+      #24207#21495
+      #26816#26597#21306#22495
+      #26816#26597#20154
+      #30331#35760#26041#24335
+      #26816#26597#26102#38388
+      #20540#29677#21592)
+    ControlLook.FixedGradientHoverFrom = clGray
+    ControlLook.FixedGradientHoverTo = clWhite
+    ControlLook.FixedGradientDownFrom = clGray
+    ControlLook.FixedGradientDownTo = clSilver
+    ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
+    ControlLook.DropDownHeader.Font.Color = clWindowText
+    ControlLook.DropDownHeader.Font.Height = -11
+    ControlLook.DropDownHeader.Font.Name = 'Tahoma'
+    ControlLook.DropDownHeader.Font.Style = []
+    ControlLook.DropDownHeader.Visible = True
+    ControlLook.DropDownHeader.Buttons = <>
+    ControlLook.DropDownFooter.Font.Charset = DEFAULT_CHARSET
+    ControlLook.DropDownFooter.Font.Color = clWindowText
+    ControlLook.DropDownFooter.Font.Height = -11
+    ControlLook.DropDownFooter.Font.Name = 'Tahoma'
+    ControlLook.DropDownFooter.Font.Style = []
+    ControlLook.DropDownFooter.Visible = True
+    ControlLook.DropDownFooter.Buttons = <>
+    Filter = <>
+    FilterDropDown.Font.Charset = DEFAULT_CHARSET
+    FilterDropDown.Font.Color = clWindowText
+    FilterDropDown.Font.Height = -11
+    FilterDropDown.Font.Name = 'Tahoma'
+    FilterDropDown.Font.Style = []
+    FilterDropDownClear = '(All)'
+    FixedRowHeight = 22
+    FixedFont.Charset = ANSI_CHARSET
+    FixedFont.Color = clWindowText
+    FixedFont.Height = -16
+    FixedFont.Name = #23435#20307
+    FixedFont.Style = []
+    FloatFormat = '%.2f'
+    Look = glSoft
+    PrintSettings.HeaderSize = 20
+    PrintSettings.DateFormat = 'dd/mm/yyyy'
+    PrintSettings.Font.Charset = DEFAULT_CHARSET
+    PrintSettings.Font.Color = clWindowText
+    PrintSettings.Font.Height = -11
+    PrintSettings.Font.Name = 'Tahoma'
+    PrintSettings.Font.Style = []
+    PrintSettings.FixedFont.Charset = DEFAULT_CHARSET
+    PrintSettings.FixedFont.Color = clWindowText
+    PrintSettings.FixedFont.Height = -11
+    PrintSettings.FixedFont.Name = 'Tahoma'
+    PrintSettings.FixedFont.Style = []
+    PrintSettings.HeaderFont.Charset = DEFAULT_CHARSET
+    PrintSettings.HeaderFont.Color = clWindowText
+    PrintSettings.HeaderFont.Height = -11
+    PrintSettings.HeaderFont.Name = 'Tahoma'
+    PrintSettings.HeaderFont.Style = []
+    PrintSettings.FooterFont.Charset = DEFAULT_CHARSET
+    PrintSettings.FooterFont.Color = clWindowText
+    PrintSettings.FooterFont.Height = -11
+    PrintSettings.FooterFont.Name = 'Tahoma'
+    PrintSettings.FooterFont.Style = []
+    PrintSettings.PageNumSep = '/'
+    ScrollWidth = 16
+    SearchFooter.Color = clBtnFace
+    SearchFooter.FindNextCaption = 'Find &next'
+    SearchFooter.FindPrevCaption = 'Find &previous'
+    SearchFooter.Font.Charset = DEFAULT_CHARSET
+    SearchFooter.Font.Color = clWindowText
+    SearchFooter.Font.Height = -11
+    SearchFooter.Font.Name = 'Tahoma'
+    SearchFooter.Font.Style = []
+    SearchFooter.HighLightCaption = 'Highlight'
+    SearchFooter.HintClose = 'Close'
+    SearchFooter.HintFindNext = 'Find next occurence'
+    SearchFooter.HintFindPrev = 'Find previous occurence'
+    SearchFooter.HintHighlight = 'Highlight occurences'
+    SearchFooter.MatchCaseCaption = 'Match case'
+    SelectionColor = clHighlight
+    SelectionTextColor = clHighlightText
+    ShowSelection = False
+    ShowDesignHelper = False
+    Version = '5.6.0.0'
+    ColWidths = (
+      64
+      130
+      100
+      80
+      120
+      100)
+  end
+  object ActionList1: TActionList
+    Left = 768
+    Top = 96
+    object actEsc: TAction
+      Caption = 'Esc'#20107#20214
+      ShortCut = 27
+      OnExecute = actEscExecute
+    end
+  end
+  object AdvPreviewDialog: TAdvPreviewDialog
+    Ctl3D = False
+    CloseAfterPrint = False
+    DialogCaption = #25171#21360#39044#35272
+    DialogPrevBtn = #19978#19968#39029
+    DialogNextBtn = #19979#19968#39029
+    DialogPrintBtn = #25171#21360
+    DialogCloseBtn = #20851#38381
+    Grid = strGridExam
+    PreviewFast = False
+    PreviewWidth = 1374
+    PreviewHeight = 746
+    PreviewLeft = 20
+    PreviewTop = 20
+    PreviewCenter = True
+    PrinterSetupDialog = True
+    ShowMaximized = True
+    Left = 736
+    Top = 96
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 696
+    Top = 88
+  end
+end

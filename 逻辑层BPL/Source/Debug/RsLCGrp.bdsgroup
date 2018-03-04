@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <PersonalityInfo>
+    <Option>
+      <Option Name="Personality">Default.Personality</Option>
+      <Option Name="ProjectType"></Option>
+      <Option Name="Version">1.0</Option>
+      <Option Name="GUID">{E5B6DCFF-D61D-42A2-BB89-4796DC78E945}</Option>
+    </Option>
+  </PersonalityInfo>
+  <Default.Personality>
+    
+    
+    
+    <Projects>
+      <Projects Name="RunSafty.exe">..\..\..\客户端\Source\RunSafty.bdsproj</Projects>
+      <Projects Name="RsLCDebug.exe">RsLCDebug.bdsproj</Projects>
+      <Projects Name="Targets">RunSafty.exe RsLCDebug.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

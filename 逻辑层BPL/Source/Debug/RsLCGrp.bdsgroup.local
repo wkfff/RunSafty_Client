@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015-08-28 13:39:14.622.bdsgroup,D:\用户目录\Documents\Borland Studio Projects\ProjectGroup1.bdsgroup=D:\工作\机务运用安全管理系统\02_开发\01_源代码\基线源码\逻辑层BPL\Source\Debug\RsLCGrp.bdsgroup</Transaction>
+  </Transactions>
+	<Default.Personality>
+		<Projects ActiveProject="RunSafty.exe"/>
+	</Default.Personality>
+</BorlandProject>

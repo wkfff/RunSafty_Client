@@ -1,0 +1,1950 @@
+object frmMain_GuanLi: TfrmMain_GuanLi
+  Left = 0
+  Top = 0
+  Align = alBottom
+  Caption = #36710#38388#31649#29702#31471
+  ClientHeight = 726
+  ClientWidth = 1020
+  Color = clBtnFace
+  Font.Charset = GB2312_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = #23435#20307
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  ExplicitWidth = 320
+  ExplicitHeight = 240
+  PixelsPerInch = 96
+  TextHeight = 12
+  object statusBar1: TRzStatusBar
+    Left = 0
+    Top = 707
+    Width = 1020
+    Height = 19
+    AutoStyle = False
+    BorderInner = fsNone
+    BorderOuter = fsNone
+    BorderSides = [sdLeft, sdTop, sdRight, sdBottom]
+    BorderWidth = 0
+    TabOrder = 0
+    ExplicitTop = 711
+    object statusFinger: TRzStatusPane
+      Left = 595
+      Top = 0
+      Width = 251
+      Height = 19
+      Align = alLeft
+      ExplicitLeft = 666
+      ExplicitTop = 3
+    end
+    object statusSysTime: TRzGlyphStatus
+      Left = 0
+      Top = 0
+      Width = 195
+      Height = 19
+      Align = alLeft
+      Caption = '2012'#24180'01'#26376'01'#26085' 00'#26102'00'#20998'00'#31186
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000120B0000120B00000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFCCCCCCCDCDCDEFEFEFE6E6E6CECECECCCCCCCC
+        CCCCCCCCCCCECECEE6E6E6EFEFEFCDCDCDCCCCCCFFFFFFFFFFFFFFFFFF45A2EF
+        42A5F39CC3DCC28390AF405FAC3C5DAC3B5DAC3C5DAF405FC283909CC3DC42A5
+        F345A2EFFFFFFFFFFFFFFFFFFF47ADF686E8FFA04A6DB64158B8555EB95A5FB9
+        5A5FB95A5FB8555EB64158A04A6D84E6FF47ADF6FFFFFFFFFFFFFFFFFFB0DAEE
+        A14C6EB94857C05D61D37273E07C7DE07C7DE07C7DD37273C05D61B94857A14C
+        6EB0DAEEFFFFFFFFFFFFFFFFFFC38791BA4A5CC6696EDF7B7CE2CFCFE9FFFF99
+        ADACE8FFFFE2CECEDF7B7BC6696EBA4A5CC38791FFFFFFFFFFFFFFFFFFB2485D
+        C66F7ADB7D7FDFCDCEDFFFFFE2FFFFE2FFFFDEFFFFDDFFFFDECCCEDB7D7FC66F
+        7AB2485DFFFFFFFFFFFFFFFFFFB04559D38993E78180D5FFFFDAFFFF544947B6
+        CED0D9FDFFD5FCFFD5FFFFE78180D38993B04559FFFFFFFFFFFFFFFFFFB14757
+        DB98A3EA8281809B9CD4FFFFB5D1D45A504EAEC6C9CFF9FE7E989AE98281DB98
+        A3B14757FFFFFFFFFFFFFFFFFFB54552E5A8B3ED8383C4FFFFAACCD05E5451AD
+        C9CDC8F5FCC4F3F9C1FCFFEC8382E5A8B3B54552FFFFFFFFFFFFDDDDDDB44A55
+        E5A1ADED9497D2C9CD5A5754A4C8CFC1F6FFBCF0F8B7F1FACDC3C6EC9396E5A1
+        ADB44A55DDDDDDFFFFFF71B7EB7E79A2CE6B71F6BECBF1898ACEC5CCB0F6FF65
+        858AADF2FCCABFC5EF8686F5BDCACE6B717E79A271B7EBFFFFFF48AFF451C5FF
+        AB5B65DC8C93FECDDAF5A0A3F28684F48684F28683F59FA2FDCCDADC8B93AB5B
+        6551C5FF48AFF4FFFFFF50B3F267D7FD68D7FBAF6165D37479F8C8D6FFE7F9FF
+        E7F9FFE7F9F8C8D6D37479AF616568D7FB67D7FD50B3F2FFFFFFC0E5FB5AC6F7
+        79F1FF7AFFFF858EA7B15658B65150B55251B65150B15658858EA77AFFFF79F1
+        FF5AC6F7C0E5FBFFFFFFFFFFFFC0E7FB54BDF54EC0FB84DBFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF84DBFF4EC0FB54BDF5C0E7FBFFFFFFFFFFFF}
+    end
+    object statusPanelDBState: TRzStatusPane
+      Left = 195
+      Top = 0
+      Width = 129
+      Height = 19
+      Align = alLeft
+      Caption = #25968#25454#24211#24050#36830#25509
+      ExplicitLeft = 12
+      ExplicitTop = 3
+      ExplicitHeight = 23
+    end
+    object statusAppVersion: TRzGlyphStatus
+      Left = 846
+      Top = 0
+      Width = 174
+      Height = 19
+      Align = alClient
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clMaroon
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+      ExplicitLeft = 1075
+      ExplicitWidth = 100
+      ExplicitHeight = 20
+    end
+    object statusUpdate: TRzStatusPane
+      Left = 324
+      Top = 0
+      Width = 271
+      Height = 19
+      Align = alLeft
+      Caption = #23458#25143#31471#24050#26159#26368#26032#29256#26412
+      ExplicitLeft = 330
+    end
+  end
+  object RzPageControl1: TRzPageControl
+    Left = 0
+    Top = 0
+    Width = 1020
+    Height = 707
+    ActivePage = TabSheet1
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 1
+    TabStyle = tsRoundCorners
+    ExplicitHeight = 711
+    FixedDimension = 18
+    object TabSheet1: TRzTabSheet
+      Caption = #35745#21010#20449#24687
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object RzPanel1: TRzPanel
+        Left = 0
+        Top = 0
+        Width = 1016
+        Height = 45
+        Align = alTop
+        BorderOuter = fsGroove
+        BorderSides = [sdTop, sdBottom]
+        BorderColor = 14080990
+        Color = 15724012
+        GradientColorStyle = gcsCustom
+        GradientColorStart = 15922421
+        TabOrder = 0
+        VisualStyle = vsClassic
+        object btnRefreshPaln: TPngSpeedButton
+          Left = 220
+          Top = 9
+          Width = 84
+          Height = 30
+          Caption = #21047#26032#35745#21010
+          Flat = True
+          OnClick = btnRefreshPalnClick
+          PngImage.Data = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            61000000097048597300000B1300000B1301009A9C1800000A4D694343505068
+            6F746F73686F70204943432070726F66696C65000078DA9D53775893F7163EDF
+            F7650F5642D8F0B1976C81002223AC08C81059A21092006184101240C585880A
+            561415119C4855C482D50A489D88E2A028B867418A885A8B555C38EE1FDCA7B5
+            7D7AEFEDEDFBD7FBBCE79CE7FCCE79CF0F8011122691E6A26A003952853C3AD8
+            1F8F4F48C4C9BD80021548E0042010E6CBC26705C50000F00379787E74B03FFC
+            01AF6F00020070D52E2412C7E1FF83BA50265700209100E02212E70B01905200
+            C82E54C81400C81800B053B3640A009400006C797C422200AA0D00ECF4493E05
+            00D8A993DC1700D8A21CA908008D0100992847240240BB00605581522C02C0C2
+            00A0AC40222E04C0AE018059B632470280BD0500768E58900F4060008099422C
+            CC0020380200431E13CD03204C03A030D2BFE0A95F7085B8480100C0CB95CD97
+            4BD23314B895D01A77F2F0E0E221E2C26CB142611729106609E4229C979B2313
+            48E7034CCE0C00001AF9D1C1FE383F90E7E6E4E1E666E76CEFF4C5A2FE6BF06F
+            223E21F1DFFEBC8C020400104ECFEFDA5FE5E5D60370C701B075BF6BA95B00DA
+            560068DFF95D33DB09A05A0AD07AF98B7938FC401E9EA150C83C1D1C0A0B0BED
+            2562A1BD30E38B3EFF33E16FE08B7EF6FC401EFEDB7AF000719A4099ADC0A383
+            FD71616E76AE528EE7CB0442316EF7E723FEC7857FFD8E29D1E234B15C2C158A
+            F15889B850224DC779B952914421C995E212E97F32F11F96FD0993770D00AC86
+            4FC04EB607B5CB6CC07EEE01028B0E58D27600407EF32D8C1A0B910010673432
+            79F7000093BFF98F402B0100CD97A4E30000BCE8185CA894174CC608000044A0
+            812AB041070CC114ACC00E9CC11DBCC01702610644400C24C03C104206E4801C
+            0AA11896411954C03AD804B5B0031AA0119AE110B4C131380DE7E0125C81EB70
+            170660189EC218BC86090441C8081361213A8811628ED822CE0817998E042261
+            48349280A420E988145122C5C872A402A9426A915D4823F22D7214398D5C40FA
+            90DBC820328AFC8ABC47319481B25103D4027540B9A81F1A8AC6A073D174340F
+            5D8096A26BD11AB41E3D80B6A2A7D14BE87574007D8A8E6380D1310E668CD961
+            5C8C87456089581A26C71663E55835568F35631D583776151BC09E61EF082402
+            8B8013EC085E8410C26C82909047584C5843A825EC23B412BA085709838431C2
+            272293A84FB4257A12F9C478623AB1905846AC26EE211E219E255E270E135F93
+            48240EC992E44E0A21259032490B496B48DB482DA453A43ED210699C4C26EB90
+            6DC9DEE408B280AC209791B7900F904F92FBC9C3E4B7143AC588E24C09A22452
+            A494124A35653FE504A59F324299A0AA51CDA99ED408AA883A9F5A496DA07650
+            2F5387A91334759A25CD9B1643CBA42DA3D5D09A696769F7682FE974BA09DD83
+            1E4597D097D26BE807E9E7E983F4770C0D860D83C7486228196B197B19A718B7
+            192F994CA605D39799C85430D7321B9967980F986F55582AF62A7C1591CA1295
+            3A9556957E95E7AA545573553FD579AA0B54AB550FAB5E567DA64655B350E3A9
+            09D416ABD5A91D55BBA936AECE5277528F50CF515FA3BE5FFD82FA630DB28685
+            46A08648A35463B7C6198D2116C63265F15842D6725603EB2C6B984D625BB2F9
+            EC4C7605FB1B762F7B4C534373AA66AC6691669DE671CD010EC6B1E0F039D99C
+            4ACE21CE0DCE7B2D032D3F2DB1D66AAD66AD7EAD37DA7ADABEDA62ED72ED16ED
+            EBDAEF75709D409D2C9DF53A6D3AF77509BA36BA51BA85BADB75CFEA3ED363EB
+            79E909F5CAF50EE9DDD147F56DF4A3F517EAEFD6EFD11F373034083690196C31
+            3863F0CC9063E86B9869B8D1F084E1A811CB68BA91C468A3D149A327B826EE87
+            67E33578173E66AC6F1C62AC34DE65DC6B3C61626932DBA4C4A4C5E4BE29CD94
+            6B9A66BAD1B4D374CCCCC82CDCACD8ACC9EC8E39D59C6B9E61BED9BCDBFC8D85
+            A5459CC54A8B368BC796DA967CCB05964D96F7AC98563E567956F556D7AC49D6
+            5CEB2CEB6DD6576C501B579B0C9B3A9BCBB6A8AD9BADC4769B6DDF14E2148F29
+            D229F5536EDA31ECFCEC0AEC9AEC06ED39F661F625F66DF6CF1DCC1C121DD63B
+            743B7C727475CC766C70BCEBA4E134C3A9C4A9C3E957671B67A1739DF33517A6
+            4B90CB1297769717536DA78AA76E9F7ACB95E51AEEBAD2B5D3F5A39BBB9BDCAD
+            D96DD4DDCC3DC57DABFB4D2E9B1BC95DC33DEF41F4F0F758E271CCE39DA79BA7
+            C2F390E72F5E765E595EFBBD1E4FB39C269ED6306DC8DBC45BE0BDCB7B603A3E
+            3D65FACEE9033EC63E029F7A9F87BEA6BE22DF3DBE237ED67E997E07FC9EFB3B
+            FACBFD8FF8BFE179F216F14E056001C101E501BD811A81B3036B031F049904A5
+            0735058D05BB062F0C3E15420C090D591F72936FC017F21BF96333DC672C9AD1
+            15CA089D155A1BFA30CC264C1ED6118E86CF08DF107E6FA6F94CE9CCB60888E0
+            476C88B81F69199917F97D14292A32AA2EEA51B453747174F72CD6ACE459FB67
+            BD8EF18FA98CB93BDB6AB6727667AC6A6C526C63EC9BB880B8AAB8817887F845
+            F1971274132409ED89E4C4D8C43D89E37302E76C9A339CE49A54967463AEE5DC
+            A2B917E6E9CECB9E773C593559907C3885981297B23FE5832042502F184FE5A7
+            6E4D1D13F2849B854F45BEA28DA251B1B7B84A3C92E69D5695F638DD3B7D43FA
+            68864F4675C633094F522B79911992B923F34D5644D6DEACCFD971D92D39949C
+            949CA3520D6996B42BD730B728B74F662B2B930DE479E66DCA1B9387CAF7E423
+            F973F3DB156C854CD1A3B452AE500E164C2FA82B785B185B78B848BD485AD433
+            DF66FEEAF9230B82167CBD90B050B8B0B3D8B87859F1E022BF45BB16238B5317
+            772E315D52BA647869F0D27DCB68CBB296FD50E2585255F26A79DCF28E5283D2
+            A5A5432B82573495A994C9CB6EAEF45AB9631561956455EF6A97D55B567F2A17
+            955FAC70ACA8AEF8B046B8E6E2574E5FD57CF5796DDADADE4AB7CAEDEB48EBA4
+            EB6EACF759BFAF4ABD6A41D5D086F00DAD1BF18DE51B5F6D4ADE74A17A6AF58E
+            CDB4CDCACD03356135ED5BCCB6ACDBF2A136A3F67A9D7F5DCB56FDADABB7BED9
+            26DAD6BFDD777BF30E831D153BDEEF94ECBCB52B78576BBD457DF56ED2EE82DD
+            8F1A621BBABFE67EDDB847774FC59E8F7BA57B07F645EFEB6A746F6CDCAFBFBF
+            B2096D52368D1E483A70E59B806FDA9BED9A77B5705A2A0EC241E5C127DFA67C
+            7BE350E8A1CEC3DCC3CDDF997FB7F508EB48792BD23ABF75AC2DA36DA03DA1BD
+            EFE88CA39D1D5E1D47BEB7FF7EEF31E36375C7358F579EA09D283DF1F9E48293
+            E3A764A79E9D4E3F3DD499DC79F74CFC996B5D515DBD6743CF9E3F1774EE4CB7
+            5FF7C9F3DEE78F5DF0BC70F422F762DB25B74BAD3DAE3D477E70FDE148AF5B6F
+            EB65F7CBED573CAE74F44DEB3BD1EFD37FFA6AC0D573D7F8D72E5D9F79BDEFC6
+            EC1BB76E26DD1CB825BAF5F876F6ED17770AEE4CDC5D7A8F78AFFCBEDAFDEA07
+            FA0FEA7FB4FEB165C06DE0F860C060CFC3590FEF0E09879EFE94FFD387E1D247
+            CC47D52346238D8F9D1F1F1B0D1ABDF264CE93E1A7B2A713CFCA7E56FF79EB73
+            ABE7DFFDE2FB4BCF58FCD8F00BF98BCFBFAE79A9F372EFABA9AF3AC723C71FBC
+            CE793DF1A6FCADCEDB7DEFB8EFBADFC7BD1F9928FC40FE50F3D1FA63C7A7D04F
+            F73EE77CFEFC2FF784F3FB25D29F33000001634944415478DA9DD3CF2B445114
+            C0F133334A29C68F852C2C50B2B0B1F37B23C4467E2CA414422C6521B290282B
+            FE018524A56816144A61A7AC942D590D8D280B6C0CDFD33B37AFBC9171EA53EF
+            F5CE3DEFBE7BCE0BC9CF68442FAA918F3012B8C20E0EF1E9924396904414F318
+            46963D7FB06785BEBC0DCCE0DE15684799BDB9072F58C33E6E6C51313A30843C
+            9C5B6E2264DBDDB637C6D18753098E3AACA2029B18D1024D3840A6252D6011EF
+            298AD4DA3964A3550BD4DB963EB08B2D9CE0555287EE3217312D5089693B9C63
+            4933B440861D5432DDC5AEC07F2382B01628470D2E71FDC7C5CD18C48A1658C2
+            949DC1C02F8BB44B2DE847A77D7A9BEBC29178E3D96DD741A10B26C56B71C4F2
+            BBDC192C6302771813AFCF41A133A003546AF7E3AE40D43E41C7F5CD92F6706B
+            CF4B74BBF6DD3988D94BE2FE2E6891398CCAF7CFF4689D2AB07B2DBE8E593C89
+            04B7B141BCFFA30A45E24DE8332EC49BD433F1CDCC17CE354A0036CDC0FD0000
+            000049454E44AE426082}
+        end
+        object Label4: TLabel
+          Left = 10
+          Top = 20
+          Width = 48
+          Height = 12
+          Caption = #24320#22987#26102#38388
+          Transparent = True
+        end
+        object btnDelBeginWork: TPngSpeedButton
+          Left = 426
+          Top = 9
+          Width = 116
+          Height = 30
+          Caption = #28165#38500#20986#21220#35760#24405
+          Flat = True
+          OnClick = btnDelBeginWorkClick
+          PngImage.Data = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            61000000097048597300000B1300000B1301009A9C1800000A4D694343505068
+            6F746F73686F70204943432070726F66696C65000078DA9D53775893F7163EDF
+            F7650F5642D8F0B1976C81002223AC08C81059A21092006184101240C585880A
+            561415119C4855C482D50A489D88E2A028B867418A885A8B555C38EE1FDCA7B5
+            7D7AEFEDEDFBD7FBBCE79CE7FCCE79CF0F8011122691E6A26A003952853C3AD8
+            1F8F4F48C4C9BD80021548E0042010E6CBC26705C50000F00379787E74B03FFC
+            01AF6F00020070D52E2412C7E1FF83BA50265700209100E02212E70B01905200
+            C82E54C81400C81800B053B3640A009400006C797C422200AA0D00ECF4493E05
+            00D8A993DC1700D8A21CA908008D0100992847240240BB00605581522C02C0C2
+            00A0AC40222E04C0AE018059B632470280BD0500768E58900F4060008099422C
+            CC0020380200431E13CD03204C03A030D2BFE0A95F7085B8480100C0CB95CD97
+            4BD23314B895D01A77F2F0E0E221E2C26CB142611729106609E4229C979B2313
+            48E7034CCE0C00001AF9D1C1FE383F90E7E6E4E1E666E76CEFF4C5A2FE6BF06F
+            223E21F1DFFEBC8C020400104ECFEFDA5FE5E5D60370C701B075BF6BA95B00DA
+            560068DFF95D33DB09A05A0AD07AF98B7938FC401E9EA150C83C1D1C0A0B0BED
+            2562A1BD30E38B3EFF33E16FE08B7EF6FC401EFEDB7AF000719A4099ADC0A383
+            FD71616E76AE528EE7CB0442316EF7E723FEC7857FFD8E29D1E234B15C2C158A
+            F15889B850224DC779B952914421C995E212E97F32F11F96FD0993770D00AC86
+            4FC04EB607B5CB6CC07EEE01028B0E58D27600407EF32D8C1A0B910010673432
+            79F7000093BFF98F402B0100CD97A4E30000BCE8185CA894174CC608000044A0
+            812AB041070CC114ACC00E9CC11DBCC01702610644400C24C03C104206E4801C
+            0AA11896411954C03AD804B5B0031AA0119AE110B4C131380DE7E0125C81EB70
+            170660189EC218BC86090441C8081361213A8811628ED822CE0817998E042261
+            48349280A420E988145122C5C872A402A9426A915D4823F22D7214398D5C40FA
+            90DBC820328AFC8ABC47319481B25103D4027540B9A81F1A8AC6A073D174340F
+            5D8096A26BD11AB41E3D80B6A2A7D14BE87574007D8A8E6380D1310E668CD961
+            5C8C87456089581A26C71663E55835568F35631D583776151BC09E61EF082402
+            8B8013EC085E8410C26C82909047584C5843A825EC23B412BA085709838431C2
+            272293A84FB4257A12F9C478623AB1905846AC26EE211E219E255E270E135F93
+            48240EC992E44E0A21259032490B496B48DB482DA453A43ED210699C4C26EB90
+            6DC9DEE408B280AC209791B7900F904F92FBC9C3E4B7143AC588E24C09A22452
+            A494124A35653FE504A59F324299A0AA51CDA99ED408AA883A9F5A496DA07650
+            2F5387A91334759A25CD9B1643CBA42DA3D5D09A696769F7682FE974BA09DD83
+            1E4597D097D26BE807E9E7E983F4770C0D860D83C7486228196B197B19A718B7
+            192F994CA605D39799C85430D7321B9967980F986F55582AF62A7C1591CA1295
+            3A9556957E95E7AA545573553FD579AA0B54AB550FAB5E567DA64655B350E3A9
+            09D416ABD5A91D55BBA936AECE5277528F50CF515FA3BE5FFD82FA630DB28685
+            46A08648A35463B7C6198D2116C63265F15842D6725603EB2C6B984D625BB2F9
+            EC4C7605FB1B762F7B4C534373AA66AC6691669DE671CD010EC6B1E0F039D99C
+            4ACE21CE0DCE7B2D032D3F2DB1D66AAD66AD7EAD37DA7ADABEDA62ED72ED16ED
+            EBDAEF75709D409D2C9DF53A6D3AF77509BA36BA51BA85BADB75CFEA3ED363EB
+            79E909F5CAF50EE9DDD147F56DF4A3F517EAEFD6EFD11F373034083690196C31
+            3863F0CC9063E86B9869B8D1F084E1A811CB68BA91C468A3D149A327B826EE87
+            67E33578173E66AC6F1C62AC34DE65DC6B3C61626932DBA4C4A4C5E4BE29CD94
+            6B9A66BAD1B4D374CCCCC82CDCACD8ACC9EC8E39D59C6B9E61BED9BCDBFC8D85
+            A5459CC54A8B368BC796DA967CCB05964D96F7AC98563E567956F556D7AC49D6
+            5CEB2CEB6DD6576C501B579B0C9B3A9BCBB6A8AD9BADC4769B6DDF14E2148F29
+            D229F5536EDA31ECFCEC0AEC9AEC06ED39F661F625F66DF6CF1DCC1C121DD63B
+            743B7C727475CC766C70BCEBA4E134C3A9C4A9C3E957671B67A1739DF33517A6
+            4B90CB1297769717536DA78AA76E9F7ACB95E51AEEBAD2B5D3F5A39BBB9BDCAD
+            D96DD4DDCC3DC57DABFB4D2E9B1BC95DC33DEF41F4F0F758E271CCE39DA79BA7
+            C2F390E72F5E765E595EFBBD1E4FB39C269ED6306DC8DBC45BE0BDCB7B603A3E
+            3D65FACEE9033EC63E029F7A9F87BEA6BE22DF3DBE237ED67E997E07FC9EFB3B
+            FACBFD8FF8BFE179F216F14E056001C101E501BD811A81B3036B031F049904A5
+            0735058D05BB062F0C3E15420C090D591F72936FC017F21BF96333DC672C9AD1
+            15CA089D155A1BFA30CC264C1ED6118E86CF08DF107E6FA6F94CE9CCB60888E0
+            476C88B81F69199917F97D14292A32AA2EEA51B453747174F72CD6ACE459FB67
+            BD8EF18FA98CB93BDB6AB6727667AC6A6C526C63EC9BB880B8AAB8817887F845
+            F1971274132409ED89E4C4D8C43D89E37302E76C9A339CE49A54967463AEE5DC
+            A2B917E6E9CECB9E773C593559907C3885981297B23FE5832042502F184FE5A7
+            6E4D1D13F2849B854F45BEA28DA251B1B7B84A3C92E69D5695F638DD3B7D43FA
+            68864F4675C633094F522B79911992B923F34D5644D6DEACCFD971D92D39949C
+            949CA3520D6996B42BD730B728B74F662B2B930DE479E66DCA1B9387CAF7E423
+            F973F3DB156C854CD1A3B452AE500E164C2FA82B785B185B78B848BD485AD433
+            DF66FEEAF9230B82167CBD90B050B8B0B3D8B87859F1E022BF45BB16238B5317
+            772E315D52BA647869F0D27DCB68CBB296FD50E2585255F26A79DCF28E5283D2
+            A5A5432B82573495A994C9CB6EAEF45AB9631561956455EF6A97D55B567F2A17
+            955FAC70ACA8AEF8B046B8E6E2574E5FD57CF5796DDADADE4AB7CAEDEB48EBA4
+            EB6EACF759BFAF4ABD6A41D5D086F00DAD1BF18DE51B5F6D4ADE74A17A6AF58E
+            CDB4CDCACD03356135ED5BCCB6ACDBF2A136A3F67A9D7F5DCB56FDADABB7BED9
+            26DAD6BFDD777BF30E831D153BDEEF94ECBCB52B78576BBD457DF56ED2EE82DD
+            8F1A621BBABFE67EDDB847774FC59E8F7BA57B07F645EFEB6A746F6CDCAFBFBF
+            B2096D52368D1E483A70E59B806FDA9BED9A77B5705A2A0EC241E5C127DFA67C
+            7BE350E8A1CEC3DCC3CDDF997FB7F508EB48792BD23ABF75AC2DA36DA03DA1BD
+            EFE88CA39D1D5E1D47BEB7FF7EEF31E36375C7358F579EA09D283DF1F9E48293
+            E3A764A79E9D4E3F3DD499DC79F74CFC996B5D515DBD6743CF9E3F1774EE4CB7
+            5FF7C9F3DEE78F5DF0BC70F422F762DB25B74BAD3DAE3D477E70FDE148AF5B6F
+            EB65F7CBED573CAE74F44DEB3BD1EFD37FFA6AC0D573D7F8D72E5D9F79BDEFC6
+            EC1BB76E26DD1CB825BAF5F876F6ED17770AEE4CDC5D7A8F78AFFCBEDAFDEA07
+            FA0FEA7FB4FEB165C06DE0F860C060CFC3590FEF0E09879EFE94FFD387E1D247
+            CC47D52346238D8F9D1F1F1B0D1ABDF264CE93E1A7B2A713CFCA7E56FF79EB73
+            ABE7DFFDE2FB4BCF58FCD8F00BF98BCFBFAE79A9F372EFABA9AF3AC723C71FBC
+            CE793DF1A6FCADCEDB7DEFB8EFBADFC7BD1F9928FC40FE50F3D1FA63C7A7D04F
+            F73EE77CFEFC2FF784F3FB25D29F330000005A4944415478DAAD93C10A002008
+            43DDFF7FB475A92C92292A7468AE1796424EE85C90586C2F8CB082412E2F1E81
+            41D43346205F0F9881E522B78877D8AB9541E06E021050A103502AA1F488A56F
+            2C35527B2BA787C926D2E33C0090FA1A0FC651D6F20000000049454E44AE4260
+            82}
+        end
+        object btnCancelPlan: TPngSpeedButton
+          Left = 310
+          Top = 9
+          Width = 109
+          Height = 30
+          Caption = #25764#38144#35745#21010
+          Flat = True
+          OnClick = btnCancelPlanClick
+          PngImage.Data = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            610000001974455874536F6674776172650041646F626520496D616765526561
+            647971C9653C0000014E4944415478DA9D92CF2B445114C7DFC3D42C2CB09814
+            7F83E57B76CC82B16421252C2CD849C9428A1D8A22D616CA46F90B64454D3D7B
+            A5447E0C9652162653CFE75B67F43CEFCD0CA73E9D3773EEFDDC7BCFBD6E1886
+            4E3C7CDFCF9246E02C088227A746B8298225D2380C23B86958C0C4669226AFC0
+            23E4113CFC45B0485A8316B8822104F775054CCCF0BD00CBD06AB5772842095E
+            E102CE11BEFC10789EA786CDDBCA6E8DC52A70097B48F6A38202F938B272BD28
+            C38640F421418E1FEB30DDA040F10993088EAA3DE8E08F6D988AADA40636D9EE
+            72F65D8D130485EF5B40A2415B306B0374DE0178836EE8853118B45B7A46D015
+            BFC636350926E05A82E8355A7DD59A5EA696FDF5126D27BBD06782DB58BD9D74
+            0A3DD432694F59E79D814306DD25D4B5CB516A9D89021BA4733A0CAA24D4748C
+            7E6AF954415A30598F6D134A0876FE235023E7E0400DFE02401198E109A3365C
+            0000000049454E44AE426082}
+        end
+        object dtpPlanStartDate: TRzDateTimePicker
+          Left = 64
+          Top = 14
+          Width = 84
+          Height = 21
+          Date = 41556.426077638890000000
+          Format = 'yyyy-MM-dd'
+          Time = 41556.426077638890000000
+          TabOrder = 0
+          OnChange = dtpPlanStartTimeChange
+          FramingPreference = fpCustomFraming
+        end
+        object dtpPlanStartTime: TRzDateTimePicker
+          Left = 154
+          Top = 14
+          Width = 60
+          Height = 21
+          Date = 41556.457372048610000000
+          Format = 'HH:mm'
+          Time = 41556.457372048610000000
+          DateMode = dmUpDown
+          Kind = dtkTime
+          TabOrder = 1
+          OnChange = dtpPlanStartTimeChange
+          FramingPreference = fpCustomFraming
+        end
+      end
+      object RzPanel4: TRzPanel
+        Left = 0
+        Top = 45
+        Width = 1016
+        Height = 20
+        Align = alTop
+        BorderOuter = fsGroove
+        BorderSides = []
+        Color = 15065568
+        Ctl3D = True
+        FlatColorAdjustment = 0
+        GradientColorStyle = gcsCustom
+        GradientColorStart = 10855845
+        GradientColorStop = 15000804
+        Padding.Left = 10
+        ParentCtl3D = False
+        TabOrder = 1
+        VisualStyle = vsClassic
+        object tabTrainJiaolu: TRzTabControl
+          Left = 10
+          Top = 0
+          Width = 1006
+          Height = 23
+          Align = alTop
+          BackgroundColor = 15065568
+          Color = clWhite
+          FlatColor = 7440017
+          ImageMargin = 10
+          HotTrackColor = 7440017
+          ParentBackgroundColor = False
+          ParentColor = False
+          ShowCard = False
+          ShowCardFrame = False
+          SoftCorners = True
+          TabColors.HighlightBar = 7440017
+          TabColors.Shadow = clNavy
+          TabColors.Unselected = clBtnFace
+          TabHeight = 20
+          TabIndex = 0
+          TabOrder = 0
+          Tabs = <
+            item
+              Caption = #26426#36710#20132#36335
+            end>
+          TabStyle = tsRoundCorners
+          UseGradients = False
+          OnChange = tabTrainJiaoluChange
+          FixedDimension = 20
+        end
+      end
+      object RzPanel8: TRzPanel
+        Left = 0
+        Top = 65
+        Width = 1016
+        Height = 617
+        Align = alClient
+        BorderOuter = fsGroove
+        BorderSides = [sdLeft, sdTop]
+        TabOrder = 2
+        ExplicitHeight = 621
+        object Panel4: TPanel
+          Left = 2
+          Top = 2
+          Width = 1014
+          Height = 615
+          Align = alClient
+          BevelOuter = bvNone
+          TabOrder = 0
+          ExplicitHeight = 619
+          object RzPanel3: TRzPanel
+            Left = 0
+            Top = 0
+            Width = 1014
+            Height = 615
+            Align = alClient
+            BorderOuter = fsNone
+            TabOrder = 0
+            ExplicitHeight = 619
+            object strGridTrainPlan: TAdvStringGrid
+              Left = 0
+              Top = 0
+              Width = 1014
+              Height = 615
+              Cursor = crDefault
+              Align = alClient
+              BevelInner = bvNone
+              BevelOuter = bvNone
+              BorderStyle = bsNone
+              Color = clWhite
+              ColCount = 23
+              Constraints.MinHeight = 180
+              Ctl3D = False
+              FixedColor = 16448250
+              RowCount = 1
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -16
+              Font.Name = #23435#20307
+              Font.Style = []
+              Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSizing, goColSizing, goEditing]
+              ParentCtl3D = False
+              ParentFont = False
+              ScrollBars = ssBoth
+              TabOrder = 0
+              ActiveRowColor = clWhite
+              GridLineColor = 14145495
+              GridFixedLineColor = 14145495
+              HoverRowColor = clWhite
+              OnGetCellColor = strGridTrainPlanGetCellColor
+              OnGetAlignment = strGridTrainPlanGetAlignment
+              OnCanEditCell = strGridTrainPlanCanEditCell
+              ActiveCellFont.Charset = DEFAULT_CHARSET
+              ActiveCellFont.Color = clWindowText
+              ActiveCellFont.Height = -11
+              ActiveCellFont.Name = 'Tahoma'
+              ActiveCellFont.Style = [fsBold]
+              ColumnHeaders.Strings = (
+                #24207#21495
+                #29366#24577
+                #26426#36710#20132#36335
+                #36710#22411
+                #36710#21495
+                #36710#27425
+                #35745#21010#24320#36710#26102#38388
+                #23454#38469#24320#36710#26102#38388
+                #20986#21220#26102#38388
+                #21496#26426
+                #21103#21496#26426
+                #23398#21592
+                #23398#21592'2'
+                #21457#36710#31449
+                #32456#21040#31449
+                #20540#20056#31867#22411
+                #35745#21010#31867#22411
+                #29301#24341#29366#24577
+                #23458#36135
+                #22791#27880#31867#22411
+                #20399#29677
+                #20399#29677#26102#38388
+                #21483#29677#26102#38388)
+              ColumnSize.Save = True
+              ColumnSize.Key = 'FormColWidths.ini'
+              ColumnSize.Section = 'GuanLiPlanInfo'
+              ColumnSize.Location = clIniFile
+              ControlLook.FixedGradientHoverFrom = 15000287
+              ControlLook.FixedGradientHoverTo = 14406605
+              ControlLook.FixedGradientHoverMirrorFrom = 14406605
+              ControlLook.FixedGradientHoverMirrorTo = 13813180
+              ControlLook.FixedGradientHoverBorder = 12033927
+              ControlLook.FixedGradientDownFrom = 14991773
+              ControlLook.FixedGradientDownTo = 14991773
+              ControlLook.FixedGradientDownMirrorFrom = 14991773
+              ControlLook.FixedGradientDownMirrorTo = 14991773
+              ControlLook.FixedGradientDownBorder = 14991773
+              ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
+              ControlLook.DropDownHeader.Font.Color = clWindowText
+              ControlLook.DropDownHeader.Font.Height = -11
+              ControlLook.DropDownHeader.Font.Name = 'Tahoma'
+              ControlLook.DropDownHeader.Font.Style = []
+              ControlLook.DropDownHeader.Visible = True
+              ControlLook.DropDownHeader.Buttons = <>
+              ControlLook.DropDownFooter.Font.Charset = DEFAULT_CHARSET
+              ControlLook.DropDownFooter.Font.Color = clWindowText
+              ControlLook.DropDownFooter.Font.Height = -11
+              ControlLook.DropDownFooter.Font.Name = 'Tahoma'
+              ControlLook.DropDownFooter.Font.Style = []
+              ControlLook.DropDownFooter.Visible = True
+              ControlLook.DropDownFooter.Buttons = <>
+              EnableHTML = False
+              EnhRowColMove = False
+              Filter = <>
+              FilterDropDown.Font.Charset = DEFAULT_CHARSET
+              FilterDropDown.Font.Color = clWindowText
+              FilterDropDown.Font.Height = -11
+              FilterDropDown.Font.Name = 'Tahoma'
+              FilterDropDown.Font.Style = []
+              FilterDropDownClear = '(All)'
+              FixedColWidth = 40
+              FixedRowHeight = 25
+              FixedRowAlways = True
+              FixedFont.Charset = GB2312_CHARSET
+              FixedFont.Color = 3355443
+              FixedFont.Height = -16
+              FixedFont.Name = #23435#20307
+              FixedFont.Style = [fsBold]
+              Flat = True
+              FloatFormat = '%.2f'
+              Look = glClassic
+              Multilinecells = True
+              PrintSettings.DateFormat = 'dd/mm/yyyy'
+              PrintSettings.Font.Charset = DEFAULT_CHARSET
+              PrintSettings.Font.Color = clWindowText
+              PrintSettings.Font.Height = -11
+              PrintSettings.Font.Name = 'Tahoma'
+              PrintSettings.Font.Style = []
+              PrintSettings.FixedFont.Charset = DEFAULT_CHARSET
+              PrintSettings.FixedFont.Color = clWindowText
+              PrintSettings.FixedFont.Height = -11
+              PrintSettings.FixedFont.Name = 'Tahoma'
+              PrintSettings.FixedFont.Style = []
+              PrintSettings.HeaderFont.Charset = DEFAULT_CHARSET
+              PrintSettings.HeaderFont.Color = clWindowText
+              PrintSettings.HeaderFont.Height = -11
+              PrintSettings.HeaderFont.Name = 'Tahoma'
+              PrintSettings.HeaderFont.Style = []
+              PrintSettings.FooterFont.Charset = DEFAULT_CHARSET
+              PrintSettings.FooterFont.Color = clWindowText
+              PrintSettings.FooterFont.Height = -11
+              PrintSettings.FooterFont.Name = 'Tahoma'
+              PrintSettings.FooterFont.Style = []
+              PrintSettings.PageNumSep = '/'
+              ScrollType = ssFlat
+              ScrollWidth = 16
+              SearchFooter.Color = clBtnFace
+              SearchFooter.FindNextCaption = 'Find &next'
+              SearchFooter.FindPrevCaption = 'Find &previous'
+              SearchFooter.Font.Charset = DEFAULT_CHARSET
+              SearchFooter.Font.Color = clWindowText
+              SearchFooter.Font.Height = -11
+              SearchFooter.Font.Name = 'Tahoma'
+              SearchFooter.Font.Style = []
+              SearchFooter.HighLightCaption = 'Highlight'
+              SearchFooter.HintClose = 'Close'
+              SearchFooter.HintFindNext = 'Find next occurence'
+              SearchFooter.HintFindPrev = 'Find previous occurence'
+              SearchFooter.HintHighlight = 'Highlight occurences'
+              SearchFooter.MatchCaseCaption = 'Match case'
+              SelectionColor = clHighlight
+              SelectionTextColor = clHighlightText
+              ShowModified.Color = clWhite
+              ShowDesignHelper = False
+              SortSettings.AutoSortForGrouping = False
+              SortSettings.Full = False
+              SortSettings.AutoFormat = False
+              SortSettings.SortOnVirtualCells = False
+              Version = '5.6.0.0'
+              ExplicitHeight = 619
+              ColWidths = (
+                40
+                58
+                129
+                59
+                54
+                191
+                150
+                122
+                91
+                66
+                66
+                65
+                47
+                90
+                66
+                49
+                108
+                64
+                64
+                64
+                64
+                64
+                64)
+              RowHeights = (
+                25)
+            end
+          end
+        end
+      end
+    end
+    object TabSheet2: TRzTabSheet
+      Caption = #20986#20837#23507#20449#24687
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object RzPanel2: TRzPanel
+        Left = 0
+        Top = 0
+        Width = 1016
+        Height = 45
+        Align = alTop
+        BorderOuter = fsGroove
+        BorderSides = [sdTop, sdBottom]
+        BorderColor = 14080990
+        Color = 15724012
+        GradientColorStyle = gcsCustom
+        GradientColorStart = 15922421
+        TabOrder = 0
+        VisualStyle = vsClassic
+        object btnRefreshRoomInfo: TPngSpeedButton
+          Left = 219
+          Top = 9
+          Width = 84
+          Height = 30
+          Caption = #21047#26032#20449#24687
+          Flat = True
+          OnClick = btnRefreshRoomInfoClick
+          PngImage.Data = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            610000001974455874536F6674776172650041646F626520496D616765526561
+            647971C9653C000003264944415478DA55925B48145118C7FF67D7B559CD3289
+            8C2889B2202A22DDF2212AA40BDA8D0A82A89782A2AB96920519DD4BEBA59702
+            2914BB78E929EAA18B96ACAD2BA86950BABB9ADAD5DAB454D475D69D33E7F4CD
+            AC690D9C3333CC9CFFF7FBFEDF9FAD39E3DC639FA4ECB6302403506831607497
+            B449012EF48EFEDFF2151BE8CBA929D81CC23F174BBBEC723DC8742CB05858AC
+            04AC90E31FA5F92CD133A4A1A4A11FFE2F23C39E666F9CBB60F3C898C086BC9A
+            EEF263CBE35ABA61B5306656A6A2E046652EA16A1CA9F3A251D9A1A2CEDB831F
+            5F426A5BAB6FCAEB5B9B4C11B631DF3D5C9AE1B0B7F75AE9AC3401046DBA1018
+            21816048C7EA790A5A7A242A3EDF04EFDD8A2A576759555EEAAE3041BE5B2DCB
+            70289D86003304D8FF025C4762AC408CDD8A1B0D67112127C05DBD8E575E5C65
+            1B13283DEA50BE0E58477D23015DE29BDA8AA65F4FF07DD00BAEE9E0218E5931
+            09D4164773C788787CF896D51448CF230122F00FDACC068C16BA86DB50EB7F88
+            19D171888F9A4E4402BAD4E9AE1B13417D6B1D3C9FBC1D2FB29C892C8D044A48
+            A067C816769E56D5F7BB64E42FCCA48A6FBB1AF1C1DF06CD209892009D5AF2B4
+            8744C5C9A230C1FA4B4470DCA174076CE1166876852DD9E80BFC340FC5DB13B1
+            73C92568E44781F30026462824B03B1894C7E26A2FBC51D9DA0B356A59161104
+            2247EB8F67206CA68ED286ABD8919C8BFB35677171DB796CB9D210ACBEBCC26E
+            12A49E23816C87F27B2812624C4052AF2122B2E1B62B07836A3F8EAEB96306B3
+            F0D90134B6D79B745CE39FD9EA5C975A96E350325DCCCC81308264FC49610A75
+            9F26E7FBA0691A61FBCC437367CDC6B2E42478BCADA876B96FB315A79C6AF9C9
+            14E57A732492E22D616C5A4FABB7233E761296CC5F6C4EC068E5EF24DA3B3FE2
+            E54B6723197A82A51CAF0A94E7A6D8F3DF2B4C0A83201C26E3FAD6928569517E
+            3290C3E3F39959303221F81C5DE3BEB59FEE7D75B2A483959DCFAFAD9C1AD064
+            344DC062D820469D986C8FC089E2FDE81BE84549F6231819B3475A0617ED7DDE
+            E5294E5F689A987CA8E208D7E436C6D852AA1D353E86F04C2408DD5A64B3F27D
+            1ABD0685104D16A0F45D517AA1F1DB1F6DD8C4A94F17EBC90000000049454E44
+            AE426082}
+        end
+        object Label1: TLabel
+          Left = 9
+          Top = 20
+          Width = 48
+          Height = 12
+          Caption = #24320#22987#26102#38388
+          Transparent = True
+        end
+        object dtRoomStartDate: TRzDateTimePicker
+          Left = 63
+          Top = 14
+          Width = 84
+          Height = 21
+          Date = 41556.426077638890000000
+          Format = 'yyyy-MM-dd'
+          Time = 41556.426077638890000000
+          TabOrder = 0
+          OnChange = dtpPlanStartTimeChange
+          FramingPreference = fpCustomFraming
+        end
+        object dtRoomStartTime: TRzDateTimePicker
+          Left = 153
+          Top = 14
+          Width = 60
+          Height = 21
+          Date = 41556.457372048610000000
+          Format = 'HH:mm'
+          Time = 41556.457372048610000000
+          DateMode = dmUpDown
+          Kind = dtkTime
+          TabOrder = 1
+          OnChange = dtpPlanStartTimeChange
+          FramingPreference = fpCustomFraming
+        end
+      end
+      object RoomInfoGrid: TAdvStringGrid
+        Left = 0
+        Top = 45
+        Width = 1016
+        Height = 637
+        Cursor = crDefault
+        Align = alClient
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        BorderStyle = bsNone
+        Color = clWhite
+        ColCount = 3
+        Constraints.MinHeight = 180
+        Ctl3D = False
+        FixedColor = 16448250
+        RowCount = 1
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = #23435#20307
+        Font.Style = []
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSizing, goColSizing, goEditing]
+        ParentCtl3D = False
+        ParentFont = False
+        ScrollBars = ssBoth
+        TabOrder = 1
+        ActiveRowColor = clWhite
+        GridLineColor = 14145495
+        GridFixedLineColor = 14145495
+        HoverRowColor = clWhite
+        OnGetAlignment = strGridTrainPlanGetAlignment
+        OnCanEditCell = strGridTrainPlanCanEditCell
+        ActiveCellFont.Charset = DEFAULT_CHARSET
+        ActiveCellFont.Color = clWindowText
+        ActiveCellFont.Height = -11
+        ActiveCellFont.Name = 'Tahoma'
+        ActiveCellFont.Style = [fsBold]
+        ColumnHeaders.Strings = (
+          #24207#21495
+          #20056#21153#21592
+          #20837#23507#26102#38388)
+        ColumnSize.Save = True
+        ColumnSize.Key = 'FormColWidths.ini'
+        ColumnSize.Section = 'RoomInfo'
+        ColumnSize.Location = clIniFile
+        ControlLook.FixedGradientHoverFrom = 15000287
+        ControlLook.FixedGradientHoverTo = 14406605
+        ControlLook.FixedGradientHoverMirrorFrom = 14406605
+        ControlLook.FixedGradientHoverMirrorTo = 13813180
+        ControlLook.FixedGradientHoverBorder = 12033927
+        ControlLook.FixedGradientDownFrom = 14991773
+        ControlLook.FixedGradientDownTo = 14991773
+        ControlLook.FixedGradientDownMirrorFrom = 14991773
+        ControlLook.FixedGradientDownMirrorTo = 14991773
+        ControlLook.FixedGradientDownBorder = 14991773
+        ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
+        ControlLook.DropDownHeader.Font.Color = clWindowText
+        ControlLook.DropDownHeader.Font.Height = -11
+        ControlLook.DropDownHeader.Font.Name = 'Tahoma'
+        ControlLook.DropDownHeader.Font.Style = []
+        ControlLook.DropDownHeader.Visible = True
+        ControlLook.DropDownHeader.Buttons = <>
+        ControlLook.DropDownFooter.Font.Charset = DEFAULT_CHARSET
+        ControlLook.DropDownFooter.Font.Color = clWindowText
+        ControlLook.DropDownFooter.Font.Height = -11
+        ControlLook.DropDownFooter.Font.Name = 'Tahoma'
+        ControlLook.DropDownFooter.Font.Style = []
+        ControlLook.DropDownFooter.Visible = True
+        ControlLook.DropDownFooter.Buttons = <>
+        EnableHTML = False
+        EnhRowColMove = False
+        Filter = <>
+        FilterDropDown.Font.Charset = DEFAULT_CHARSET
+        FilterDropDown.Font.Color = clWindowText
+        FilterDropDown.Font.Height = -11
+        FilterDropDown.Font.Name = 'Tahoma'
+        FilterDropDown.Font.Style = []
+        FilterDropDownClear = '(All)'
+        FixedColWidth = 40
+        FixedRowHeight = 25
+        FixedRowAlways = True
+        FixedFont.Charset = GB2312_CHARSET
+        FixedFont.Color = 3355443
+        FixedFont.Height = -16
+        FixedFont.Name = #23435#20307
+        FixedFont.Style = [fsBold]
+        Flat = True
+        FloatFormat = '%.2f'
+        Look = glClassic
+        Multilinecells = True
+        PrintSettings.DateFormat = 'dd/mm/yyyy'
+        PrintSettings.Font.Charset = DEFAULT_CHARSET
+        PrintSettings.Font.Color = clWindowText
+        PrintSettings.Font.Height = -11
+        PrintSettings.Font.Name = 'Tahoma'
+        PrintSettings.Font.Style = []
+        PrintSettings.FixedFont.Charset = DEFAULT_CHARSET
+        PrintSettings.FixedFont.Color = clWindowText
+        PrintSettings.FixedFont.Height = -11
+        PrintSettings.FixedFont.Name = 'Tahoma'
+        PrintSettings.FixedFont.Style = []
+        PrintSettings.HeaderFont.Charset = DEFAULT_CHARSET
+        PrintSettings.HeaderFont.Color = clWindowText
+        PrintSettings.HeaderFont.Height = -11
+        PrintSettings.HeaderFont.Name = 'Tahoma'
+        PrintSettings.HeaderFont.Style = []
+        PrintSettings.FooterFont.Charset = DEFAULT_CHARSET
+        PrintSettings.FooterFont.Color = clWindowText
+        PrintSettings.FooterFont.Height = -11
+        PrintSettings.FooterFont.Name = 'Tahoma'
+        PrintSettings.FooterFont.Style = []
+        PrintSettings.PageNumSep = '/'
+        ScrollType = ssFlat
+        ScrollWidth = 16
+        SearchFooter.Color = clBtnFace
+        SearchFooter.FindNextCaption = 'Find &next'
+        SearchFooter.FindPrevCaption = 'Find &previous'
+        SearchFooter.Font.Charset = DEFAULT_CHARSET
+        SearchFooter.Font.Color = clWindowText
+        SearchFooter.Font.Height = -11
+        SearchFooter.Font.Name = 'Tahoma'
+        SearchFooter.Font.Style = []
+        SearchFooter.HighLightCaption = 'Highlight'
+        SearchFooter.HintClose = 'Close'
+        SearchFooter.HintFindNext = 'Find next occurence'
+        SearchFooter.HintFindPrev = 'Find previous occurence'
+        SearchFooter.HintHighlight = 'Highlight occurences'
+        SearchFooter.MatchCaseCaption = 'Match case'
+        SelectionColor = clHighlight
+        SelectionTextColor = clHighlightText
+        ShowModified.Color = clWhite
+        ShowDesignHelper = False
+        SortSettings.AutoSortForGrouping = False
+        SortSettings.Full = False
+        SortSettings.AutoFormat = False
+        SortSettings.SortOnVirtualCells = False
+        Version = '5.6.0.0'
+        ExplicitHeight = 641
+        ColWidths = (
+          40
+          58
+          129)
+        RowHeights = (
+          25)
+      end
+    end
+    object TabSheet3: TRzTabSheet
+      Caption = #35831#38144#20551
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object RzPanel5: TRzPanel
+        Left = 0
+        Top = 0
+        Width = 1016
+        Height = 81
+        Align = alTop
+        BorderOuter = fsGroove
+        BorderSides = [sdBottom]
+        BorderColor = 14080990
+        Color = 15724012
+        GradientColorStyle = gcsCustom
+        GradientColorStart = 15922421
+        TabOrder = 0
+        VisualStyle = vsClassic
+        object Label3: TLabel
+          Left = 25
+          Top = 19
+          Width = 36
+          Height = 12
+          Caption = #24037#21495#65306
+        end
+        object Label2: TLabel
+          Left = 171
+          Top = 19
+          Width = 36
+          Height = 12
+          Caption = #31867#22411#65306
+        end
+        object Label6: TLabel
+          Left = 301
+          Top = 19
+          Width = 36
+          Height = 12
+          Caption = #29366#24577#65306
+        end
+        object Label5: TLabel
+          Left = 428
+          Top = 19
+          Width = 36
+          Height = 12
+          Caption = #32844#20301#65306
+        end
+        object Label7: TLabel
+          Left = 546
+          Top = 19
+          Width = 48
+          Height = 12
+          Caption = #25351#23548#38431#65306
+        end
+        object Label8: TLabel
+          Left = 179
+          Top = 45
+          Width = 12
+          Height = 12
+          Caption = #21040
+        end
+        object btnQuery: TPngSpeedButton
+          Left = 333
+          Top = 42
+          Width = 70
+          Height = 25
+          Caption = #26597#35810
+          Flat = True
+          OnClick = btnQueryClick
+          PngImage.Data = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            610000001974455874536F6674776172650041646F626520496D616765526561
+            647971C9653C000002E64944415478DA95926D4893611486EF77DBBBCDCD8F04
+            97B1D9621586591315914D9BCE393F4A0AFCA390DA8F0651922888486A588A49
+            140A1195E50F8B90CCFC238ADADC52FB50D4B0403191669A96DA4C9BDB9C6E7B
+            7B67386745D0811B9EE73C9C8BC3FDDC043C6AF8B6B28272D80B4139B8EE26C1
+            5C2398AC1B91B9FA32FC56144581D8BA0CD42A660324878512D971100291EB95
+            1E26402DCCC2D0DF8E6F86B1B9E8FC5ED15F016F6AE26625510942EFD014DCEA
+            F7C3C0171E4892008B64422EB2E2ACD48895F7ED981AD2CFC90A7A443B002F6B
+            541502F1FE52617C0E34AD413871C41F72090FABEB0E2C5A1CF860B463727903
+            D7A2C631DDDD80C51943656C4177991BA0BF1EB7A6C8D070AE8F4620285004E5
+            411EBE9AEDF86E736065DD89452B8519138560EF1564EDEA45DFD37A9BB2A887
+            EB06E8AA8F51CADC42A43747E26A6A00D69D4E186D4E981C147ED05AB251D870
+            10348C44D5A14EE8EEDE84AAB88F7003BAAA1494FAFC0564B42B50A2F2C782D5
+            4E0F0216DA9E555AB48FBF006B244A84CDE8AABB83E44BBDDB808ECA782AF99C
+            06A77549C88AE0C3E2B46F0E5A984C70BD989B46DA6CC092958522DF47E87850
+            8FD4D29E6D405B85D296989EC6AE5B50C3C2DE0B5F3E606530C0E3B3C0F36183
+            C361C16405765BA791686AC2F39636D3A9F217BE6EC0BD7CF9FDC8308926244E
+            8DB2C934707924FCBC5D007A032E098264C16107B2371AF04EDB09B3711E89C5
+            3AC23307C267971346C2228205A2D0703C598EC10482C177ADCF61208461809A
+            D0C2303C8C996923929203F14A3B86D87C3DE199446953994A2B160B04D2F003
+            F0F2F7A6F14E578E615E3263E4ED4798E63F2325260808C90456BA31A01D45F4
+            452D417824535A9B1B9BB7C79F934DA3D9D456DA409868277D328306019207EC
+            53004773F0FA7135E479BA1D0057096905D26278F4E84F05B3F1CAC9A14CF110
+            E0EB874F3C59CBDCC44CBA2CAFEB0FC0BF2AB2B13C6D88DE0E2C86139D835367
+            EA5AC71EFE0F6013E2711EA74D34FF04D99336F021FF0CC50000000049454E44
+            AE426082}
+        end
+        object btnViewDetail: TPngSpeedButton
+          Left = 409
+          Top = 42
+          Width = 70
+          Height = 25
+          Caption = #35814#32454
+          Flat = True
+          OnClick = btnViewDetailClick
+          PngImage.Data = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            610000001974455874536F6674776172650041646F626520496D616765526561
+            647971C9653C000001F64944415478DAA593CD4F134118C69FE96E4BE81228BB
+            7621012486E8850BF1C6458D25C644E04438D9B48989DC89FC151238D65BBFD2
+            A3347E1DD49A60E2CD8BDE3CC8414D1AD7B2ED2A294BBA9D1967B688EC0630C1
+            D9BCC96433CF6F9E79F2BEA452A9B428A509C61808E017F74B7C7273C2228420
+            128940511487944A259E4EA7719E552E97410A8502CF6432B0EA5FB1D36458D9
+            B2B1316FE0EA580C5DA820E2267ECC8A74EA791E2E4E8CA3582C82E4F3799ECD
+            66E134EA58AEEE231E2370BBC093E5212C2CDD45D234A1EB3A54350ABB69A361
+            594298C788F82F2EFF0BF8695B78FFCDC5DA8B161EDE19C6ECA541785C910F0E
+            D8FEE360C44C8600AD0606FB1410550828C75E87C363C7C4BC97B07C0EA50C66
+            320470F71CBCDB71B0F6CCC6FA82816B570C3F83D31C0C27868200EAFEC2EDB2
+            052D16C1BEC7F1EADE3852B716FD0C0CC31019A8D8B57B1954AB8FA1C5E34140
+            F7A08DED4F0D3C78DEC4FABC8EB9E95178673818D04200DA71A1C494A356629E
+            38C8E42E089019C88AF7F70701E01DD43ED6B1FA74171B8B17303733218E2B27
+            369074108D46430030A41E7DC6405F2F83D7F72FE3C6CD144C7314BAA1FB19D8
+            22831FDF2DBCA9BDF441210050FBF0C577B0291CA46626FFD9CA3EE0BF672197
+            CB6D6B9A769D317A388DE46812F91962318968B7DB6FA5664A54E25C1600E737
+            5F3013E78843057E0000000049454E44AE426082}
+        end
+        object btnExport: TPngSpeedButton
+          Left = 485
+          Top = 42
+          Width = 70
+          Height = 25
+          Caption = #23548#20986
+          Flat = True
+          OnClick = btnExportClick
+          PngImage.Data = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            61000002274944415478DAA5D35F6852511C07F0EF55EFBD6AF9A75ACBD48583
+            B5062AEAC3FEF85023A33F444450542F81568BF6D41F8A1511F41263107BE8A1
+            2008A2511121F4D28BA3D2B56504639B6344B15208953972DCDC5476FF9CAEB7
+            C40535927EF0E30787F3FD700E8743E13F8BEA0E0E9D92676F9DB9BBB10727EE
+            2BC0AE9E27C47FD85F573A1E8EC36AE26C43B7CE66A8C0E9C7C4B7DB53173031
+            3C059BF9FB4F20D47787F0A4113ABD6ED590402F60C11686397310CC128F75FA
+            45F3C0B58B1CD57773901CDFBF135EAFF7AFE15C318B9E977BD1D422209BA461
+            C83A61996BFF77607C6E0CB7672EA3D99307052DDEC5CA58C36D690B9F1CFEB8
+            2A309A8EE045EA11D28B297C2BCFC3D755064D6B0189C54894130981F58F8048
+            445C7D13446A69128C310FDD5A110613E4300D8666E4D682C8C868AC50F80D20
+            3259168A381F3D86F9D22CEC0D5A3836B442A3A6A166257C91A2BF1016767507
+            9EBD7ECF2BC0D17DDDF0783C0A706F7A0091CF4FD169ED44463EF687FC0C0C8C
+            51864B6871E6C1EA54B068DC88C493BC2009760538B2673BDC6EB7025C791B92
+            EF20E26B2989D0B64BE8DA18004554E84F9C434EFF0A5B1B9B313E5504C5197D
+            CF8323930A7028E087CBE5822449E89FB80046C5A2B7ED3AD4D0286865FD46E2
+            0C1C9BD6633A330B3ADD044BAEA3F68C0776B4C3E9742A1B2B5D0DAD9CDC721E
+            0F5383686036A310B76199E76B40ABC50487C3A16C5C19AA74A5AAB35A63894F
+            1044A906D4F913ABA5003F001CD11B7AAC886D540000000049454E44AE426082}
+        end
+        object btnCancelLeave: TPngSpeedButton
+          Left = 561
+          Top = 42
+          Width = 84
+          Height = 25
+          Caption = #25764#38144#35831#20551
+          Flat = True
+          OnClick = btnCancelLeaveClick
+          PngImage.Data = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            610000001974455874536F6674776172650041646F626520496D616765526561
+            647971C9653C0000014E4944415478DA9D92CF2B445114C7DFC3D42C2CB09814
+            7F83E57B76CC82B16421252C2CD849C9428A1D8A22D616CA46F90B64454D3D7B
+            A5447E0C9652162653CFE75B67F43CEFCD0CA73E9D3773EEFDDC7BCFBD6E1886
+            4E3C7CDFCF9246E02C088227A746B8298225D2380C23B86958C0C4669226AFC0
+            23E4113CFC45B0485A8316B8822104F775054CCCF0BD00CBD06AB5772842095E
+            E102CE11BEFC10789EA786CDDBCA6E8DC52A70097B48F6A38202F938B272BD28
+            C38640F421418E1FEB30DDA040F10993088EAA3DE8E08F6D988AADA40636D9EE
+            72F65D8D130485EF5B40A2415B306B0374DE0178836EE8853118B45B7A46D015
+            BFC636350926E05A82E8355A7DD59A5EA696FDF5126D27BBD06782DB58BD9D74
+            0A3DD432694F59E79D814306DD25D4B5CB516A9D89021BA4733A0CAA24D4748C
+            7E6AF954415A30598F6D134A0876FE235023E7E0400DFE02401198E109A3365C
+            0000000049454E44AE426082}
+        end
+        object edtNumber: TRzEdit
+          Left = 83
+          Top = 16
+          Width = 82
+          Height = 20
+          FrameController = GlobalDM.FrameController
+          TabOrder = 0
+        end
+        object cmbType: TRzComboBox
+          Left = 213
+          Top = 16
+          Width = 82
+          Height = 20
+          Style = csDropDownList
+          Ctl3D = False
+          FrameController = GlobalDM.FrameController
+          ItemHeight = 12
+          ParentCtl3D = False
+          TabOrder = 1
+          OnChange = cmbTypeChange
+        end
+        object cmbStatus: TRzComboBox
+          Left = 333
+          Top = 16
+          Width = 76
+          Height = 20
+          Style = csDropDownList
+          Ctl3D = False
+          FrameController = GlobalDM.FrameController
+          ItemHeight = 12
+          ParentCtl3D = False
+          TabOrder = 2
+          OnChange = cmbTypeChange
+        end
+        object cmbPost: TRzComboBox
+          Left = 461
+          Top = 16
+          Width = 68
+          Height = 20
+          Style = csDropDownList
+          Ctl3D = False
+          FrameController = GlobalDM.FrameController
+          ItemHeight = 12
+          ParentCtl3D = False
+          TabOrder = 3
+          OnChange = cmbTypeChange
+        end
+        object cmbGroup: TRzComboBox
+          Left = 589
+          Top = 16
+          Width = 68
+          Height = 20
+          Style = csDropDownList
+          Ctl3D = False
+          FrameController = GlobalDM.FrameController
+          ItemHeight = 12
+          ParentCtl3D = False
+          TabOrder = 4
+          OnChange = cmbTypeChange
+        end
+        object checkDataRange: TRzCheckBox
+          Left = 6
+          Top = 44
+          Width = 79
+          Height = 15
+          Caption = #35831#20551#26085#26399#65306
+          FillColor = clWhite
+          FocusColor = clWhite
+          FrameColor = 7960953
+          FrameController = GlobalDM.FrameController
+          HotTrack = True
+          HotTrackColor = clGradientActiveCaption
+          HotTrackStyle = htsFrame
+          State = cbUnchecked
+          TabOrder = 5
+          OnClick = checkDataRangeClick
+        end
+        object dtpBeginDate: TRzDateTimePicker
+          Left = 83
+          Top = 42
+          Width = 82
+          Height = 20
+          Date = 41000.000000000000000000
+          Format = 'yyyy-MM-dd'
+          Time = 41000.000000000000000000
+          DateFormat = dfLong
+          TabOrder = 6
+          FlatButtons = True
+          FrameVisible = True
+          ShowToday = True
+        end
+        object dtpEndDate: TRzDateTimePicker
+          Left = 213
+          Top = 42
+          Width = 82
+          Height = 20
+          Date = 41000.999988425930000000
+          Format = 'yyyy-MM-dd'
+          Time = 41000.999988425930000000
+          DateFormat = dfLong
+          TabOrder = 7
+          FlatButtons = True
+          FrameVisible = True
+          ShowToday = True
+        end
+        object cbkShowAllUnEnd: TRzCheckBox
+          Left = 663
+          Top = 18
+          Width = 115
+          Height = 17
+          Caption = #26174#31034#20840#37096#26410#38144#20551#35760#24405
+          State = cbUnchecked
+          TabOrder = 8
+        end
+      end
+      object strGridLeaveInfo: TAdvStringGrid
+        Left = 0
+        Top = 81
+        Width = 1016
+        Height = 601
+        Cursor = crDefault
+        Align = alClient
+        BevelOuter = bvNone
+        BorderStyle = bsNone
+        ColCount = 12
+        Ctl3D = False
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -14
+        Font.Name = #23435#20307
+        Font.Style = []
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goTabs, goRowSelect]
+        ParentCtl3D = False
+        ParentFont = False
+        ScrollBars = ssBoth
+        TabOrder = 1
+        ActiveCellFont.Charset = DEFAULT_CHARSET
+        ActiveCellFont.Color = clWindowText
+        ActiveCellFont.Height = -11
+        ActiveCellFont.Name = 'Tahoma'
+        ActiveCellFont.Style = [fsBold]
+        ColumnHeaders.Strings = (
+          #24207#21495
+          #24037#21495
+          #22995#21517
+          #35831#20551#31867#22411
+          #35831#20551#24320#22987#26102#38388
+          #35831#20551#32467#26463#26102#38388
+          #24403#21069#29366#24577
+          #35831#20551#25209#20934#20154
+          #25805#20316#21592
+          #22791#27880#20449#24687' '
+          #32844#20301
+          #25351#23548#38431)
+        ControlLook.FixedGradientHoverFrom = clGray
+        ControlLook.FixedGradientHoverTo = clWhite
+        ControlLook.FixedGradientDownFrom = clGray
+        ControlLook.FixedGradientDownTo = clSilver
+        ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
+        ControlLook.DropDownHeader.Font.Color = clWindowText
+        ControlLook.DropDownHeader.Font.Height = -11
+        ControlLook.DropDownHeader.Font.Name = 'Tahoma'
+        ControlLook.DropDownHeader.Font.Style = []
+        ControlLook.DropDownHeader.Visible = True
+        ControlLook.DropDownHeader.Buttons = <>
+        ControlLook.DropDownFooter.Font.Charset = DEFAULT_CHARSET
+        ControlLook.DropDownFooter.Font.Color = clWindowText
+        ControlLook.DropDownFooter.Font.Height = -11
+        ControlLook.DropDownFooter.Font.Name = 'Tahoma'
+        ControlLook.DropDownFooter.Font.Style = []
+        ControlLook.DropDownFooter.Visible = True
+        ControlLook.DropDownFooter.Buttons = <>
+        Filter = <>
+        FilterDropDown.Font.Charset = DEFAULT_CHARSET
+        FilterDropDown.Font.Color = clWindowText
+        FilterDropDown.Font.Height = -11
+        FilterDropDown.Font.Name = 'Tahoma'
+        FilterDropDown.Font.Style = []
+        FilterDropDownClear = '(All)'
+        FixedColWidth = 45
+        FixedRowHeight = 24
+        FixedFont.Charset = GB2312_CHARSET
+        FixedFont.Color = clWindowText
+        FixedFont.Height = -14
+        FixedFont.Name = #23435#20307
+        FixedFont.Style = [fsBold]
+        Flat = True
+        FloatFormat = '%.2f'
+        Look = glSoft
+        PrintSettings.DateFormat = 'dd/mm/yyyy'
+        PrintSettings.Font.Charset = DEFAULT_CHARSET
+        PrintSettings.Font.Color = clWindowText
+        PrintSettings.Font.Height = -11
+        PrintSettings.Font.Name = 'Tahoma'
+        PrintSettings.Font.Style = []
+        PrintSettings.FixedFont.Charset = DEFAULT_CHARSET
+        PrintSettings.FixedFont.Color = clWindowText
+        PrintSettings.FixedFont.Height = -11
+        PrintSettings.FixedFont.Name = 'Tahoma'
+        PrintSettings.FixedFont.Style = []
+        PrintSettings.HeaderFont.Charset = DEFAULT_CHARSET
+        PrintSettings.HeaderFont.Color = clWindowText
+        PrintSettings.HeaderFont.Height = -11
+        PrintSettings.HeaderFont.Name = 'Tahoma'
+        PrintSettings.HeaderFont.Style = []
+        PrintSettings.FooterFont.Charset = DEFAULT_CHARSET
+        PrintSettings.FooterFont.Color = clWindowText
+        PrintSettings.FooterFont.Height = -11
+        PrintSettings.FooterFont.Name = 'Tahoma'
+        PrintSettings.FooterFont.Style = []
+        PrintSettings.PageNumSep = '/'
+        ScrollWidth = 16
+        SearchFooter.Color = clBtnFace
+        SearchFooter.FindNextCaption = 'Find &next'
+        SearchFooter.FindPrevCaption = 'Find &previous'
+        SearchFooter.Font.Charset = DEFAULT_CHARSET
+        SearchFooter.Font.Color = clWindowText
+        SearchFooter.Font.Height = -11
+        SearchFooter.Font.Name = 'Tahoma'
+        SearchFooter.Font.Style = []
+        SearchFooter.HighLightCaption = 'Highlight'
+        SearchFooter.HintClose = 'Close'
+        SearchFooter.HintFindNext = 'Find next occurence'
+        SearchFooter.HintFindPrev = 'Find previous occurence'
+        SearchFooter.HintHighlight = 'Highlight occurences'
+        SearchFooter.MatchCaseCaption = 'Match case'
+        SelectionColor = clHighlight
+        SelectionTextColor = clHighlightText
+        ShowDesignHelper = False
+        Version = '5.6.0.0'
+        ExplicitHeight = 605
+        ColWidths = (
+          45
+          70
+          80
+          80
+          170
+          170
+          80
+          105
+          80
+          200
+          64
+          64)
+        RowHeights = (
+          24
+          22
+          22
+          22
+          22
+          22
+          22
+          22
+          22
+          22)
+      end
+    end
+    object tbsTabSheet4: TRzTabSheet
+      Caption = #20154#21592#32479#35745
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object PageControl1: TRzPageControl
+        Left = 0
+        Top = 45
+        Width = 1016
+        Height = 637
+        ActivePage = tbsTabSheet8
+        Align = alClient
+        ShowShadow = False
+        TabOrder = 0
+        ExplicitHeight = 641
+        FixedDimension = 0
+        object tbsTabSheet5: TRzTabSheet
+          TabVisible = False
+          Caption = #20154#21592#29366#24577#32479#35745
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
+          object chartPerson: TChart
+            Left = 0
+            Top = 0
+            Width = 1014
+            Height = 639
+            BackWall.Brush.Color = clWhite
+            BackWall.Brush.Style = bsClear
+            Title.Text.Strings = (
+              '')
+            Align = alClient
+            TabOrder = 0
+            object Series1: TBarSeries
+              Marks.ArrowLength = 20
+              Marks.Style = smsValue
+              Marks.Visible = True
+              SeriesColor = clRed
+              XValues.DateTime = False
+              XValues.Name = 'X'
+              XValues.Multiplier = 1.000000000000000000
+              XValues.Order = loAscending
+              YValues.DateTime = False
+              YValues.Name = 'Bar'
+              YValues.Multiplier = 1.000000000000000000
+              YValues.Order = loNone
+            end
+          end
+        end
+        object tbsTabSheet6: TRzTabSheet
+          TabVisible = False
+          Caption = #20132#36335#20154#21592#20998#24067
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
+          object chartJiaolu: TChart
+            Left = 0
+            Top = 0
+            Width = 1014
+            Height = 639
+            BackWall.Brush.Color = clWhite
+            BackWall.Brush.Style = bsClear
+            Title.Text.Strings = (
+              '')
+            Align = alClient
+            TabOrder = 0
+            object Series2: TBarSeries
+              Marks.ArrowLength = 20
+              Marks.Style = smsValue
+              Marks.Visible = True
+              SeriesColor = clRed
+              XValues.DateTime = False
+              XValues.Name = 'X'
+              XValues.Multiplier = 1.000000000000000000
+              XValues.Order = loAscending
+              YValues.DateTime = False
+              YValues.Name = 'Bar'
+              YValues.Multiplier = 1.000000000000000000
+              YValues.Order = loNone
+            end
+          end
+        end
+        object tbsTabSheet7: TRzTabSheet
+          TabVisible = False
+          Caption = #20241#20551#20154#21592#20998#24067
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
+          object chartXiuJia: TChart
+            Left = 0
+            Top = 0
+            Width = 1014
+            Height = 639
+            BackWall.Brush.Color = clWhite
+            BackWall.Brush.Style = bsClear
+            Title.Text.Strings = (
+              '')
+            Align = alClient
+            TabOrder = 0
+            object Series3: TBarSeries
+              Marks.ArrowLength = 20
+              Marks.Style = smsValue
+              Marks.Visible = True
+              SeriesColor = clRed
+              XValues.DateTime = False
+              XValues.Name = 'X'
+              XValues.Multiplier = 1.000000000000000000
+              XValues.Order = loAscending
+              YValues.DateTime = False
+              YValues.Name = 'Bar'
+              YValues.Multiplier = 1.000000000000000000
+              YValues.Order = loNone
+            end
+          end
+        end
+        object tbsTabSheet8: TRzTabSheet
+          TabVisible = False
+          Caption = #36816#36716#20154#21592#32479#35745
+          object rzpnl2: TRzPanel
+            Left = 249
+            Top = 0
+            Width = 765
+            Height = 635
+            Align = alClient
+            TabOrder = 0
+            ExplicitHeight = 639
+            object AdvSplitter1: TAdvSplitter
+              Left = 481
+              Top = 2
+              Width = 5
+              Height = 635
+              Appearance.BorderColor = clNone
+              Appearance.BorderColorHot = clNone
+              Appearance.Color = clWhite
+              Appearance.ColorTo = clSilver
+              Appearance.ColorHot = clWhite
+              Appearance.ColorHotTo = clGray
+              GripStyle = sgDots
+              ExplicitHeight = 623
+            end
+            object rzpnl1: TRzPanel
+              Left = 2
+              Top = 2
+              Width = 479
+              Height = 635
+              Align = alLeft
+              BorderOuter = fsNone
+              TabOrder = 0
+              object rzpnl4: TRzPanel
+                Left = 0
+                Top = 0
+                Width = 479
+                Height = 279
+                Align = alTop
+                BorderOuter = fsNone
+                TabOrder = 0
+                object chartYunZhuan: TChart
+                  Left = 0
+                  Top = 0
+                  Width = 479
+                  Height = 279
+                  AllowPanning = pmNone
+                  AllowZoom = False
+                  BackWall.Brush.Color = clWhite
+                  BackWall.Brush.Style = bsClear
+                  BackWall.Pen.Visible = False
+                  Title.Font.Charset = ANSI_CHARSET
+                  Title.Font.Color = clBlue
+                  Title.Font.Height = -13
+                  Title.Font.Name = #23435#20307
+                  Title.Font.Style = []
+                  Title.Text.Strings = (
+                    '')
+                  OnClickSeries = chartYunZhuanClickSeries
+                  AxisVisible = False
+                  ClipPoints = False
+                  Frame.Visible = False
+                  Legend.Frame.Color = clBlue
+                  Legend.Frame.Style = psDashDotDot
+                  Legend.Frame.SmallDots = True
+                  View3DOptions.Elevation = 315
+                  View3DOptions.Orthogonal = False
+                  View3DOptions.Perspective = 0
+                  View3DOptions.Rotation = 360
+                  View3DWalls = False
+                  Align = alClient
+                  BevelOuter = bvNone
+                  TabOrder = 0
+                  object Label9: TLabel
+                    Left = 328
+                    Top = 240
+                    Width = 48
+                    Height = 19
+                    Caption = #24635#35745':'
+                    Font.Charset = GB2312_CHARSET
+                    Font.Color = clWindowText
+                    Font.Height = -19
+                    Font.Name = #23435#20307
+                    Font.Style = []
+                    ParentFont = False
+                  end
+                  object lblTotalCount: TLabel
+                    Left = 393
+                    Top = 240
+                    Width = 10
+                    Height = 19
+                    Caption = '0'
+                    Color = clBtnFace
+                    Font.Charset = GB2312_CHARSET
+                    Font.Color = clRed
+                    Font.Height = -19
+                    Font.Name = #23435#20307
+                    Font.Style = []
+                    ParentColor = False
+                    ParentFont = False
+                  end
+                  object Series4: TPieSeries
+                    Marks.ArrowLength = 8
+                    Marks.Style = smsLabelValue
+                    Marks.Visible = True
+                    SeriesColor = clRed
+                    OtherSlice.Text = 'Other'
+                    PieValues.DateTime = False
+                    PieValues.Name = 'Pie'
+                    PieValues.Multiplier = 1.000000000000000000
+                    PieValues.Order = loNone
+                  end
+                end
+              end
+              object RzPanel6: TRzPanel
+                Left = 0
+                Top = 279
+                Width = 479
+                Height = 356
+                Align = alClient
+                BorderOuter = fsNone
+                BorderHighlight = clBtnFace
+                TabOrder = 1
+              end
+            end
+            object strGridTrainman: TAdvStringGrid
+              Left = 486
+              Top = 2
+              Width = 277
+              Height = 635
+              Cursor = crDefault
+              Align = alClient
+              BevelOuter = bvNone
+              BorderStyle = bsNone
+              Color = clWhite
+              ColCount = 6
+              Ctl3D = True
+              DefaultColWidth = 80
+              FixedCols = 0
+              RowCount = 2
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              Options = [goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing]
+              ParentCtl3D = False
+              ParentFont = False
+              ScrollBars = ssBoth
+              TabOrder = 1
+              ActiveCellFont.Charset = DEFAULT_CHARSET
+              ActiveCellFont.Color = clWindowText
+              ActiveCellFont.Height = -11
+              ActiveCellFont.Name = 'Tahoma'
+              ActiveCellFont.Style = [fsBold]
+              ColumnHeaders.Strings = (
+                #24207#21495
+                #29366#24577
+                #21496#26426'1'
+                #21496#26426'2'
+                #23398#21592'1'
+                #23398#21592'2')
+              ControlLook.FixedGradientHoverFrom = 13619409
+              ControlLook.FixedGradientHoverTo = 12502728
+              ControlLook.FixedGradientHoverMirrorFrom = 12502728
+              ControlLook.FixedGradientHoverMirrorTo = 11254975
+              ControlLook.FixedGradientDownFrom = 8816520
+              ControlLook.FixedGradientDownTo = 7568510
+              ControlLook.FixedGradientDownMirrorFrom = 7568510
+              ControlLook.FixedGradientDownMirrorTo = 6452086
+              ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
+              ControlLook.DropDownHeader.Font.Color = clWindowText
+              ControlLook.DropDownHeader.Font.Height = -11
+              ControlLook.DropDownHeader.Font.Name = 'Tahoma'
+              ControlLook.DropDownHeader.Font.Style = []
+              ControlLook.DropDownHeader.Visible = True
+              ControlLook.DropDownHeader.Buttons = <>
+              ControlLook.DropDownFooter.Font.Charset = DEFAULT_CHARSET
+              ControlLook.DropDownFooter.Font.Color = clWindowText
+              ControlLook.DropDownFooter.Font.Height = -11
+              ControlLook.DropDownFooter.Font.Name = 'Tahoma'
+              ControlLook.DropDownFooter.Font.Style = []
+              ControlLook.DropDownFooter.Visible = True
+              ControlLook.DropDownFooter.Buttons = <>
+              Filter = <>
+              FilterDropDown.Font.Charset = DEFAULT_CHARSET
+              FilterDropDown.Font.Color = clWindowText
+              FilterDropDown.Font.Height = -11
+              FilterDropDown.Font.Name = 'Tahoma'
+              FilterDropDown.Font.Style = []
+              FilterDropDownClear = '(All)'
+              FixedColWidth = 80
+              FixedRowHeight = 22
+              FixedFont.Charset = ANSI_CHARSET
+              FixedFont.Color = clWindowText
+              FixedFont.Height = -13
+              FixedFont.Name = #23435#20307
+              FixedFont.Style = []
+              FloatFormat = '%.2f'
+              Look = glSoft
+              PrintSettings.DateFormat = 'dd/mm/yyyy'
+              PrintSettings.Font.Charset = DEFAULT_CHARSET
+              PrintSettings.Font.Color = clWindowText
+              PrintSettings.Font.Height = -11
+              PrintSettings.Font.Name = 'Tahoma'
+              PrintSettings.Font.Style = []
+              PrintSettings.FixedFont.Charset = DEFAULT_CHARSET
+              PrintSettings.FixedFont.Color = clWindowText
+              PrintSettings.FixedFont.Height = -11
+              PrintSettings.FixedFont.Name = 'Tahoma'
+              PrintSettings.FixedFont.Style = []
+              PrintSettings.HeaderFont.Charset = DEFAULT_CHARSET
+              PrintSettings.HeaderFont.Color = clWindowText
+              PrintSettings.HeaderFont.Height = -11
+              PrintSettings.HeaderFont.Name = 'Tahoma'
+              PrintSettings.HeaderFont.Style = []
+              PrintSettings.FooterFont.Charset = DEFAULT_CHARSET
+              PrintSettings.FooterFont.Color = clWindowText
+              PrintSettings.FooterFont.Height = -11
+              PrintSettings.FooterFont.Name = 'Tahoma'
+              PrintSettings.FooterFont.Style = []
+              PrintSettings.PageNumSep = '/'
+              SearchFooter.Color = clBtnFace
+              SearchFooter.FindNextCaption = 'Find &next'
+              SearchFooter.FindPrevCaption = 'Find &previous'
+              SearchFooter.Font.Charset = DEFAULT_CHARSET
+              SearchFooter.Font.Color = clWindowText
+              SearchFooter.Font.Height = -11
+              SearchFooter.Font.Name = 'Tahoma'
+              SearchFooter.Font.Style = []
+              SearchFooter.HighLightCaption = 'Highlight'
+              SearchFooter.HintClose = 'Close'
+              SearchFooter.HintFindNext = 'Find next occurence'
+              SearchFooter.HintFindPrev = 'Find previous occurence'
+              SearchFooter.HintHighlight = 'Highlight occurences'
+              SearchFooter.MatchCaseCaption = 'Match case'
+              SelectionColor = clHighlight
+              SelectionTextColor = clHighlightText
+              ShowDesignHelper = False
+              Version = '5.6.0.0'
+              ColWidths = (
+                80
+                80
+                102
+                106
+                99
+                119)
+              RowHeights = (
+                22
+                22)
+            end
+          end
+          object panel1: TRzPanel
+            Left = 0
+            Top = 0
+            Width = 249
+            Height = 635
+            Align = alLeft
+            BorderOuter = fsNone
+            TabOrder = 1
+            object lvJiaoLu: TRzListView
+              Left = 0
+              Top = 0
+              Width = 249
+              Height = 635
+              Align = alClient
+              BorderStyle = bsNone
+              Columns = <
+                item
+                  Caption = #24207#21495
+                  Width = 70
+                end
+                item
+                  Caption = #20132#36335#21517#23383
+                  Width = 162
+                end>
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -16
+              Font.Name = #23435#20307
+              Font.Style = []
+              GridLines = True
+              HideSelection = False
+              ParentFont = False
+              RowSelect = True
+              TabOrder = 0
+              ViewStyle = vsReport
+              OnClick = lvJiaoLuClick
+            end
+          end
+        end
+      end
+      object RzRadioGroup1: TRzRadioGroup
+        Left = 0
+        Top = 0
+        Width = 1016
+        Height = 45
+        Align = alTop
+        Columns = 4
+        Ctl3D = True
+        GroupStyle = gsUnderline
+        ItemFrameColor = 8409372
+        ItemHotTrack = True
+        ItemHighlightColor = 2203937
+        ItemIndex = 0
+        Items.Strings = (
+          #20154#21592#29366#24577#32479#35745
+          #20132#36335#20154#21592#20998#24067
+          #20241#20551#20154#21592#20998#24067
+          #36816#36716#20154#21592#32479#35745)
+        ParentCtl3D = False
+        TabOrder = 1
+        OnClick = RzRadioGroup1Click
+      end
+    end
+  end
+  object tmrRefreshSendLog: TTimer
+    Enabled = False
+    OnTimer = tmrRefreshSendLogTimer
+    Left = 562
+    Top = 117
+  end
+  object MainMenu1: TMainMenu
+    AutoHotkeys = maManual
+    Left = 480
+    Top = 112
+    object MenuItem1: TMenuItem
+      AutoHotkeys = maManual
+      Caption = #25991#20214
+      object miModifyPassword: TMenuItem
+        Caption = #20462#25913#23494#30721
+        OnClick = miModifyPasswordClick
+      end
+      object N29: TMenuItem
+        Caption = #20999#25442#29992#25143
+        OnClick = N29Click
+      end
+      object N30: TMenuItem
+        Caption = '-'
+      end
+      object N31: TMenuItem
+        Caption = #20999#25442#21151#33021
+        OnClick = N31Click
+      end
+      object N32: TMenuItem
+        Caption = '-'
+      end
+      object mmExit: TMenuItem
+        Caption = #36864#20986'(&X)'
+        OnClick = mmExitClick
+      end
+    end
+    object N4: TMenuItem
+      Caption = #21517#29260#31649#29702
+      object N12: TMenuItem
+        Caption = #30005#23376#21517#29260
+        OnClick = N12Click
+      end
+      object N14: TMenuItem
+        Caption = #26597#30475#29677#24207
+        OnClick = N14Click
+      end
+      object N11: TMenuItem
+        Caption = '-'
+      end
+      object miPaibanRecord: TMenuItem
+        Caption = #27966#29677#26085#24535#20889#23454
+        OnClick = miPaibanRecordClick
+      end
+      object miBoardChangeLog: TMenuItem
+        Caption = #21517#29260#21464#21160#26085#24535
+        OnClick = miBoardChangeLogClick
+      end
+      object N13: TMenuItem
+        Caption = '-'
+      end
+      object mTrainmanManage: TMenuItem
+        Caption = #20154#21592#24211#31649#29702
+        OnClick = mTrainmanManageClick
+      end
+      object N15: TMenuItem
+        Caption = '-'
+      end
+      object N16: TMenuItem
+        Caption = #24178#37096#32844#21153#31649#29702'...'
+        OnClick = N16Click
+      end
+      object N9: TMenuItem
+        Caption = #24178#37096#31649#29702'...'
+        OnClick = N9Click
+      end
+      object N17: TMenuItem
+        Caption = '-'
+      end
+      object N18: TMenuItem
+        Caption = #24180#20241#20551#31649#29702'...'
+        OnClick = N18Click
+      end
+      object N19: TMenuItem
+        Caption = '-'
+      end
+      object N20: TMenuItem
+        Caption = #20851#38190#20154#31649#29702'...'
+        OnClick = N20Click
+      end
+    end
+    object N3: TMenuItem
+      Caption = #36864#21220
+      object N5: TMenuItem
+        Caption = #26597#30475#36864#21220#26102#38388#20462#25913#26085#24535
+        OnClick = N5Click
+      end
+      object N23: TMenuItem
+        Caption = #36716#20648#26202#20110#36864#21220'('#26597#35810')...'
+        OnClick = N23Click
+      end
+      object N24: TMenuItem
+        Caption = #25991#20214#32467#26463#26089#20110#36864#21220'(n)'#23567#26102'...'
+        OnClick = N24Click
+      end
+    end
+    object N1: TMenuItem
+      Caption = #39277#31080
+      object N2: TMenuItem
+        Caption = #26597#30475'...'
+        OnClick = N2Click
+      end
+      object N21: TMenuItem
+        Caption = #35774#32622'...'
+        OnClick = N21Click
+      end
+      object N22: TMenuItem
+        Caption = #25163#24037#21457#25918#39277#31080#26597#35810'...'
+        OnClick = N22Click
+      end
+    end
+    object IC1: TMenuItem
+      Caption = #30005#21488#21644'IC'#21345
+      object N7: TMenuItem
+        Caption = #26597#35810
+        OnClick = N7Click
+      end
+      object N10: TMenuItem
+        Caption = #29289#21697#32534#30721#33539#22260#25511#21046
+        OnClick = N10Click
+      end
+    end
+    object N8: TMenuItem
+      Caption = #35774#32622
+    end
+    object N6: TMenuItem
+      Caption = #24110#21161
+      object N36: TMenuItem
+        Caption = #20851#20110
+      end
+    end
+  end
+  object TimerCheckUpdate: TTimer
+    Interval = 300000
+    OnTimer = TimerCheckUpdateTimer
+    Left = 560
+    Top = 152
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = '*.xls'
+    FileName = '*.xls'
+    Filter = '*.xls'
+    Left = 488
+    Top = 8
+  end
+end

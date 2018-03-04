@@ -1,0 +1,46 @@
+package TFMessageCompnent;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION '畅想消息组件'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vcljpg,
+  dbrtl,
+  adortl,
+  IndyCore,
+  IndySystem,
+  IndyProtocols,
+  PNG_D10,
+  PubDefinitionBPL;
+
+contains
+  uTFMessageComponent in 'uTFMessageComponent.pas',
+  superobject in 'JSON\superobject.pas',
+  superxmlparser in 'JSON\superxmlparser.pas',
+  uTFMessageDefine in 'uTFMessageDefine.pas';
+
+end.

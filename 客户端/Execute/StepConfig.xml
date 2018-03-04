@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ModuleConfig>
+	<FunModule ModuleName="退勤功能" Enable="True">
+		<FunModule StepName="退勤检查步骤" ClassName="TRsTuiQinCheckStep" Enable="True"/>
+		<FunModule StepName="测酒步骤" ClassName="TRsShowTuiQinThirdStep" Enable="False" RightBottomPopWindow="False"/>		
+		<FunModule StepName="退勤检查步骤" ClassName="TRsTuiQinCheckStep" Enable="False"/>
+    <FunModule StepName="物品归还" ClassName="TRsICReturnStep" Enable="False"/>
+		<FunModule StepName="测酒步骤" ClassName="TRsTestAlcoholStep" Enable="True" RightBottomPopWindow="False"/>
+		<FunModule StepName="退勤步骤" ClassName="TRsTuiQinStep" Enable="True"/>		
+	</FunModule>
+</ModuleConfig>

@@ -1,0 +1,958 @@
+unit uTFMessageComponent;
+
+interface
+uses
+  Classes,SysUtils,Controls,Contnrs,uTFSystem,Windows,IdHTTP,Messages,
+  uTFMessageDefine,IdURI,XMLDoc,XMLIntf,StrUtils,superobject;
+type
+  {HTTP发送结果}
+  RHttpResult = record
+    result: Integer;  //结果0为成功,1为失败
+    strError: string; //错误信息
+  end;
+
+  
+  {TMessageBuffer  本地消息暂存管理}
+  TMessageBuffer = class
+  public
+    constructor Create(FileName: string);
+    destructor Destroy; override;
+  private
+    m_XML: IXMLDocument;
+    {缓存文件名}
+    m_strFileName: string;
+    {是否处于激活状态}
+    m_bActive: Boolean;
+    {临界区}
+    m_CriticalSection: TRTLCriticalSection;
+
+  private
+    {功能:获取当在缓存中数据条数}
+    function GetMessageCount: Integer;
+    {功能:进入临界区}
+    procedure Lock;
+    {功能:退出临界区}
+    procedure UnLock;
+  public
+    {功能:打开缓存文件}
+    procedure Open();
+    {功能:关闭缓存文件}
+    procedure Close();
+    {功能:添加一条消息到缓存}
+    procedure AddMessage(strMessage: string);
+    {功能:从缓存中读取一条消息}
+    function GetFirstMessage: string;
+    {功能:删除第一条消息}
+    procedure RemoveFirstMessage();
+
+  public
+    property FileName: string read m_strFileName write m_strFileName;
+    property Active: Boolean read m_bActive;
+    property Count: Integer read GetMessageCount;
+  end;
+
+
+  TMsgDataComm = class
+  public
+    constructor Create();
+  private
+    m_ConnectTimeOut: Integer;
+    m_strClientID: string;
+    m_nMaxCount: Integer;
+    m_strURLHost: string;
+    //最后一次的消息ID
+    m_nLastMsgID: Integer;
+
+
+    {功能:生成发送消息的URL}
+    function CreatePostMessageURL(TFMessage: TTFMessage): string;
+    {功能:生成确认消息的URL}
+    function CreateConfirmURL(TFMessages: TTFMessageList): string;
+    {功能:消息解析}
+    procedure DecodeMessage(strMessage: string;TFMessageList: TTFMessageList);
+    {功能:解板返回的HTTP结果}
+    function DecodeHttpResult(strValue: string): RHttpResult;
+
+  public
+     {功能:生成获取消息的URL}
+    function CreateGetMessageURL(msgID: Integer = 0): string;
+    {功能:获取消息}
+    function GetMessages(TFMessageList: TTFMessageList): Boolean;
+    {功能:发送消息}
+    function SendMessage(TFMessage: TTFMessage): Boolean;
+    {功能:确认消息}
+    function ConfrimMessage(TFMessages: TTFMessageList): Boolean;
+
+  public
+    property URLHost: string read m_strURLHost write m_strURLHost;
+    property MaxCount: Integer read m_nMaxCount write m_nMaxCount;
+    property ClinetID: string read m_strClientID write m_strClientID;
+    property ConnectTimeOut: Integer read m_ConnectTimeOut write m_ConnectTimeOut;
+    property LastMsgID:Integer read  m_nLastMsgID write m_nLastMsgID;
+  end;
+
+  {TTFMessageSynMode 消息组件工作同步方式}
+  TTFMessageSynMode = (SynMode{同步工作},ASynMode{异步工作});
+
+
+////////////////////////////////////////////////////////////////////////////////
+/// TTFMessageCompnent  畅想消息组件
+////////////////////////////////////////////////////////////////////////////////
+  TTFMessageCompnent = class
+  public
+    constructor Create(SynMode: TTFMessageSynMode);
+    destructor Destroy; override;
+  protected
+    {组件句柄}
+    m_Handle: THandle;
+    {通信对象}
+    m_MsgDataComm: TMsgDataComm;
+    {消息接收线程}
+    m_MessageThread: TRunFunctionThread;
+    {临界区}
+    m_CriticalSection: TRTLCriticalSection;
+
+    {接收到的消息列表}
+    m_TFMessageList: TTFMessageList;
+    {消息暂存}
+    m_MessageBuffer: TMessageBuffer;
+    {临时消息列表}
+    m_TempMessageList: TTFMessageList;
+
+    {工作方式}
+    m_SynMode: TTFMessageSynMode;
+    {是否可用}
+    m_bEnable: Boolean;
+    {数据接收读取周期}
+    m_nPeriod: Cardinal;
+    {错误信息}
+    m_strError: string;
+    {本地临时路径}
+    m_LocalTempPath: string;
+
+    {收到消息的事件}
+    m_OnMessageEvent: TOnMessageEvent;
+    {错误事件}
+    m_OnError: TOnEventByString;
+    m_bAutoRecieveMsg: Boolean;
+
+    procedure Lock;
+    procedure UnLock;
+    {功能:消息处理函数}
+    procedure WndPro(var Message: TMessage);
+    {功能:获取临时路径}
+    function GetTempPath(): string;
+    {功能:发送接收消息事件}
+    procedure DoOnMessage(TFMessages: TTFMessageList);
+    {功能:消息接收事件函数}
+    procedure ThreadFun();
+    {功能:线程延时}
+    procedure ThreadDelay(ms: Cardinal);
+    {功能:设置接收周期}
+    procedure SetPeriod(Value: Cardinal);
+    {功能:错误通知事件}
+    procedure DoError(strError: string);
+    {功能:错误消息处理函数}
+    procedure WMERROR(var Message: TMessage);message WM_ERROR;
+    {功能:接收消息处理}
+    procedure WMONMESSAGE(var Message: TMessage);message WM_TFONMESSAGE;
+    {功能:异步发送消息}
+    procedure ASynHttpPostMessage();
+    {功能:设置本地临时路径}
+    procedure SetLocalPath(Value: string);
+    {功能:向外部通知消息}
+    procedure NotifyMessages();
+
+    {功能:置可用状态}
+    procedure SetEnable(const Value: Boolean);
+
+    procedure SetMaxCount(const Value: Integer);
+    function GetMaxCount(): Integer;
+    procedure SetURLHost(const Value: string);
+    function GetURLHost(): string;
+    procedure SetClientID(const Value: string);
+    function GetClinetID(): string;
+    procedure SetConnectTimeOut(const Value: Integer);
+    function GetConnectTimeOut(): Integer;
+    {功能:得到消息缓冲区数}
+    function GetMessageBufferCount(): integer;
+  public
+    {功能:异步工作时打开缓存并启用线程}
+    procedure Open();
+    {功能:关闭异步工作线程}
+    procedure Close();
+    {功能:发送消息}
+    procedure PostMessage(TFMessage: TTFMessage);
+    {功能:接收消息}
+    procedure HttpRecieveMessage();
+    {功能:确认消息}
+    procedure ConfirmMessages(TFMessages: TTFMessageList);
+    {功能:清除为已接收状态的消息}
+    procedure CancelRecievedMessages();
+    {功能:清除全部消息}
+    procedure CancelAllMessages();
+    {功能:清除为失败状态的消息}
+    procedure CancelFailedMessages();
+  public
+    property MsgDataComm: TMsgDataComm read m_MsgDataComm;
+    property ConnectTimeOut: Integer read GetConnectTimeOut write SetConnectTimeOut;
+    property OnMessage: TOnMessageEvent read m_OnMessageEvent write m_OnMessageEvent;
+    property OnError: TOnEventByString read m_OnError write m_OnError;
+    property Enable: Boolean read m_bEnable write SetEnable;
+    property Period: Cardinal read m_nPeriod write SetPeriod;
+    property MaxCount: Integer read GetMaxCount write SetMaxCount;
+    property ClientID: string read GetClinetID write SetClientID;
+    property URL: string read GetURLHost write SetURLHost;
+    property LocalTempPath: string read m_LocalTempPath write SetLocalPath;
+    property TFMessageList: TTFMessageList read m_TFMessageList;
+    property MessageBufferCount: integer read GetMessageBufferCount;
+    property AutoRecieveMsg: Boolean read m_bAutoRecieveMsg write m_bAutoRecieveMsg;
+  end;
+
+
+implementation
+
+{ TTFMessageCompnent }
+constructor TTFMessageCompnent.Create(SynMode: TTFMessageSynMode);
+begin
+  m_SynMode := SynMode;
+  if m_SynMode = ASynMode then
+    m_Handle := Classes.AllocateHWnd(WndPro);
+
+  m_bAutoRecieveMsg := True;
+  m_MsgDataComm := TMsgDataComm.Create;
+
+  m_MessageBuffer := TMessageBuffer.Create(ExtractFilePath(ParamStr(0)) + 'MessageBuffer.xml');
+  m_TFMessageList := TTFMessageList.Create;
+  m_TempMessageList := TTFMessageList.Create;
+  m_TempMessageList.OwnsObjects := False;
+  m_nPeriod := 1000;
+  InitializeCriticalSection(m_CriticalSection);
+  m_MessageThread := TRunFunctionThread.Create(ThreadFun);
+  m_MessageThread.Resume;
+end;
+
+
+destructor TTFMessageCompnent.Destroy;
+begin
+  m_MessageThread.Free;
+  Classes.DeallocateHWnd(m_Handle);
+  m_TFMessageList.Free;
+  m_MessageBuffer.Free;
+  m_MsgDataComm.Free;
+  m_TempMessageList.Free;
+  DeleteCriticalSection(m_CriticalSection);
+  inherited;
+end;
+
+procedure TTFMessageCompnent.DoError(strError: string);
+begin
+  if Assigned(m_OnError) then
+  try
+    m_OnError(strError);
+  except
+
+  end;
+
+end;
+
+procedure TTFMessageCompnent.DoOnMessage(TFMessages: TTFMessageList);
+begin
+  if Assigned(m_OnMessageEvent) then
+  begin
+    try
+      m_OnMessageEvent(TFMessages);
+    except
+      on E: Exception do
+      begin
+        DoError(E.Message);
+      end;
+    end;
+
+  end;
+
+end;
+procedure TTFMessageCompnent.CancelAllMessages;
+var
+  I: Integer;
+begin
+  Lock;
+  try
+    for I := 0 to m_TFMessageList.Count - 1 do
+    begin
+      m_TFMessageList.Items[i].nResult := TFMESSAGE_STATE_CANCELD;
+    end;
+
+  finally
+    UnLock;
+  end;
+end;
+
+procedure TTFMessageCompnent.CancelFailedMessages;
+var
+  I: Integer;
+begin
+  Lock;
+  try
+    for I := 0 to m_TFMessageList.Count - 1 do
+    begin
+      if m_TFMessageList.Items[i].nResult = TFMESSAGE_STATE_FAILED then
+        m_TFMessageList.Items[i].nResult := TFMESSAGE_STATE_CANCELD;
+    end;
+
+  finally
+    UnLock;
+  end;
+end;
+
+procedure TTFMessageCompnent.CancelRecievedMessages;
+var
+  I: Integer;
+begin
+  Lock;
+  try
+    for I := 0 to m_TFMessageList.Count - 1 do
+    begin
+      if m_TFMessageList.Items[i].nResult = TFMESSAGE_STATE_RECIEVED then
+        m_TFMessageList.Items[i].nResult := TFMESSAGE_STATE_CANCELD;
+    end;
+
+  finally
+    UnLock;
+  end;
+end;
+
+procedure TTFMessageCompnent.Close;
+begin
+  m_bEnable := False;
+end;
+
+
+function TTFMessageCompnent.GetClinetID: string;
+begin
+  Result := m_MsgDataComm.ClinetID;
+end;
+
+function TTFMessageCompnent.GetConnectTimeOut: Integer;
+begin
+  Result := m_MsgDataComm.ConnectTimeOut;
+end;
+
+function TTFMessageCompnent.GetMaxCount: Integer;
+begin
+  Result := m_MsgDataComm.MaxCount;
+end;
+
+function TTFMessageCompnent.GetMessageBufferCount: integer;
+begin
+  result := m_MessageBuffer.Count;
+end;
+
+function TTFMessageCompnent.GetTempPath: string;
+begin
+  if Trim(m_LocalTempPath) = '' then
+  begin
+    Result := ExtractFilePath(ParamStr(0));
+  end
+  else
+  begin
+    if not DirectoryExists(m_LocalTempPath) then
+    begin
+      ForceDirectories(m_LocalTempPath);
+      Result := m_LocalTempPath;
+    end;
+  end;
+end;
+
+function TTFMessageCompnent.GetURLHost: string;
+begin
+  Result := m_MsgDataComm.URLHost;
+end;
+
+procedure TTFMessageCompnent.Lock;
+begin
+  EnterCriticalSection(m_CriticalSection);
+end;
+
+
+procedure TTFMessageCompnent.NotifyMessages;
+var
+  I: Integer;
+begin
+  Lock;
+  try
+    m_TempMessageList.Clear;
+  
+    if m_TFMessageList.Count > 0 then
+    begin
+      for I := 0 to m_TFMessageList.Count - 1 do
+      begin
+        if m_TFMessageList.Items[i].nResult < TFMESSAGE_STATE_RECIEVED then
+        begin
+          m_TempMessageList.Add(m_TFMessageList.Items[i]);
+        end;    
+      end;
+    end;
+  finally
+    UnLock;
+  end;
+  if m_TempMessageList.Count > 0 then
+    SendMessage(Self.m_Handle,WM_TFONMESSAGE,Integer(@m_TempMessageList),0);
+end;
+
+procedure TTFMessageCompnent.ConfirmMessages(TFMessages: TTFMessageList);
+var
+  i: Integer;
+begin
+  Lock;
+  try
+    m_TempMessageList.Clear;
+
+    for I := 0 to TFMessages.Count - 1 do
+    begin
+      if TFMessages.Items[i].nResult = TFMESSAGE_STATE_CANCELD then
+      begin
+        m_TempMessageList.Add(TFMessages.Items[i]);
+      end;
+    end;
+    if m_MsgDataComm.ConfrimMessage(m_TempMessageList) then
+    begin
+      for I := 0 to m_TempMessageList.Count - 1 do
+      begin
+        TFMessages.Remove(m_TempMessageList.Items[i]);
+      end;
+    end;
+  finally
+    UnLock;
+  end;
+
+end;
+
+procedure TTFMessageCompnent.ASynHttpPostMessage();
+var
+  TFMessage: TTFMessage;
+  strMessage: string;
+begin
+  Lock;
+  try
+    if not m_MessageBuffer.Active then
+      Exit;
+    strMessage := '';
+
+    if m_MessageBuffer.Count > 0 then
+    begin
+      strMessage := m_MessageBuffer.GetFirstMessage();
+    end;
+  finally
+    UnLock;
+  end;
+
+
+  if strMessage <> '' then
+  begin
+    TFMessage := TTFMessage.Create;
+    try
+      TFMessage.JSON := strMessage;
+      if m_MsgDataComm.SendMessage(TFMessage) then
+      begin
+        m_MessageBuffer.RemoveFirstMessage;
+      end;
+    finally
+      TFMessage.Free;
+    end;
+  end;
+
+end;
+
+procedure TTFMessageCompnent.PostMessage(TFMessage: TTFMessage);
+begin
+  if self.ClientID = '' then
+    raise Exception.Create('请设置客户端消息ID!');
+
+  if self.URL = '' then
+    raise Exception.Create('请设置消息接收服务URL');
+
+  if m_SynMode = ASynMode then
+  begin
+    if not m_bEnable then
+      raise Exception.Create('请选打开消息组件!');
+    m_MessageBuffer.AddMessage(TFMessage.JSON);
+  end
+  else
+  begin
+    Lock;
+    try
+      m_MsgDataComm.SendMessage(TFMessage);
+    finally
+      UnLock;
+    end;
+  end;
+
+end;
+
+
+procedure TTFMessageCompnent.HttpRecieveMessage;
+var
+  I: Integer;
+begin
+  Lock;
+  try
+    m_TempMessageList.Clear;
+
+    if m_MsgDataComm.GetMessages(m_TempMessageList) then
+    begin
+      for I := 0 to m_TempMessageList.Count - 1 do
+      begin
+        m_TFMessageList.Add(m_TempMessageList.Items[i]);
+      end;
+    end;
+  finally
+    UnLock;
+  end;
+end;
+
+procedure TTFMessageCompnent.Open;
+begin
+  m_MessageBuffer.Open();
+  m_bEnable := True;
+end;
+
+procedure TTFMessageCompnent.SetClientID(const Value: string);
+begin
+  if m_MsgDataComm.ClinetID <> Value then
+  begin
+    Lock;
+    try
+      m_MsgDataComm.ClinetID := Value;
+    finally
+      UnLock;
+    end;
+  end;
+end;
+
+
+procedure TTFMessageCompnent.SetConnectTimeOut(const Value: Integer);
+begin
+  Lock;
+  try
+    m_MsgDataComm.ConnectTimeOut := Value;
+  finally
+    UnLock;
+  end;
+end;
+
+procedure TTFMessageCompnent.SetEnable(const Value: Boolean);
+begin
+  if Value <> m_bEnable then
+  begin
+    Lock;
+    try
+      m_bEnable := Value; 
+    finally
+      UnLock;
+    end;
+  end;
+end;
+
+procedure TTFMessageCompnent.SetLocalPath(Value: string);
+begin
+  if Value <> m_LocalTempPath then
+  begin
+    Lock;
+    try
+      m_MessageBuffer.Close;
+      m_MessageBuffer.FileName := Value + 'MessageBuffer.xml';
+      if m_bEnable then
+      begin
+        m_MessageBuffer.Open();
+      end;
+      m_LocalTempPath := Value;
+    finally
+      UnLock;
+    end;
+
+  end;
+end;
+
+procedure TTFMessageCompnent.SetMaxCount(const Value: Integer);
+begin
+  Lock;
+  try
+    m_MsgDataComm.MaxCount := Value;
+  finally
+    UnLock;
+  end;
+end;
+
+procedure TTFMessageCompnent.SetPeriod(Value: Cardinal);
+begin
+  if Value < 10 then
+    Exit;
+
+  m_nPeriod := Value;
+end;
+
+procedure TTFMessageCompnent.SetURLHost(const Value: string);
+begin
+  Lock;
+  try
+    m_MsgDataComm.URLHost := Value;
+  finally
+    UnLock;
+  end;
+end;
+
+
+procedure TTFMessageCompnent.ThreadDelay(ms: Cardinal);
+var
+  nTickCount: Cardinal;
+begin
+  nTickCount := GetTickCount;
+  while ((GetTickCount - nTickCount) < ms) and (not m_MessageThread.Terminated)  do
+  begin
+    Sleep(5)  
+  end;  
+end;
+
+procedure TTFMessageCompnent.ThreadFun;
+var
+  bEnable: Boolean;
+begin
+  while (not m_MessageThread.Terminated) do
+  begin
+    try
+      if m_SynMode = ASynMode then
+      begin
+        Lock;
+        try
+          bEnable := m_bEnable;
+        finally
+          UnLock;
+        end;
+
+        if bEnable then
+        begin
+          try
+            ASynHttpPostMessage();
+            if m_bAutoRecieveMsg then
+            begin
+              HttpRecieveMessage();
+              NotifyMessages();
+              ConfirmMessages(m_TFMessageList);
+            end;
+
+          except
+            on E: Exception do
+            begin
+              m_strError := E.Message;
+              SendMessage(Self.m_Handle,WM_ERROR,Integer(@m_strError),0);
+            end;
+          end;
+        end;
+      end;
+
+    finally
+      ThreadDelay(m_nPeriod);
+    end;
+  end;
+
+end;
+
+procedure TTFMessageCompnent.UnLock;
+begin
+  LeaveCriticalSection(m_CriticalSection);
+end;
+
+procedure TTFMessageCompnent.WMERROR(var Message: TMessage);
+begin
+  DoError(string(Pointer(Message.WParam)^));
+end;
+
+procedure TTFMessageCompnent.WMONMESSAGE(var Message: TMessage);
+begin
+  DoOnMessage(TTFMessageList(Pointer(Message.WParam)^));
+end;
+
+procedure TTFMessageCompnent.WndPro(var Message: TMessage);
+begin
+  Dispatch(Message);
+end;
+
+
+{ TMessageBuffer }
+
+procedure TMessageBuffer.AddMessage(strMessage: string);
+var
+  Node: IXMLNode;
+begin
+  if not m_bActive then
+    raise Exception.Create('未处于激活状态,不能添加消息!');
+  Lock;
+  try
+    Node := m_XML.ChildNodes.Nodes['Messages'].AddChild('M');
+    Node.Text := strMessage;
+    m_XML.SaveToFile(m_strFileName);
+  finally
+    UnLock;
+  end;
+
+end;
+
+procedure TMessageBuffer.Close;
+begin
+  m_bActive := False;  
+end;
+
+constructor TMessageBuffer.Create(FileName: string);
+begin
+  m_XML := NewXMLDocument();
+  m_strFileName :=  FileName;
+  InitializeCriticalSection(m_CriticalSection);
+end;
+
+destructor TMessageBuffer.Destroy;
+begin
+  m_XML := nil;
+  DeleteCriticalSection(m_CriticalSection);
+  inherited;
+end;
+
+function TMessageBuffer.GetFirstMessage: string;
+var
+  Node: IXMLNode;
+begin
+  Result := '';
+  if not m_bActive then
+    raise Exception.Create('未处于激活状态,不能读取消息!');
+  Lock;
+  try
+    Node := m_XML.ChildNodes.Nodes['Messages'].ChildNodes.First;
+    if Node <> nil then
+      Result := Node.Text;
+  finally
+    UnLock;
+  end;
+
+end;
+
+function TMessageBuffer.GetMessageCount: Integer;
+begin
+  Result := m_XML.ChildNodes.Nodes['Messages'].ChildNodes.Count;
+end;
+
+procedure TMessageBuffer.Lock;
+begin
+  EnterCriticalSection(m_CriticalSection);
+end;
+
+procedure TMessageBuffer.Open;
+begin
+  if m_bActive then
+    Exit;
+    
+  m_XML.ChildNodes.Clear;
+  if FileExists(m_strFileName) then  
+    m_XML.LoadFromFile(m_strFileName)
+  else
+  begin
+    m_XML.AddChild('Messages');
+    m_XML.SaveToFile(m_strFileName);
+  end;
+
+  m_bActive := True;
+end;
+
+
+procedure TMessageBuffer.RemoveFirstMessage;
+var
+  Node: IXMLNode;
+begin
+  Lock;
+  try
+    Node := m_XML.ChildNodes.Nodes['Messages'].ChildNodes.First;
+    if Node <> nil then
+    begin
+      m_XML.ChildNodes.Nodes['Messages'].ChildNodes.Remove(Node);
+      m_XML.SaveToFile(m_strFileName);
+    end;
+  finally
+    UnLock;
+  end;
+
+    
+end;
+
+procedure TMessageBuffer.UnLock;
+begin
+  LeaveCriticalSection(m_CriticalSection);
+end;
+
+{ TMsgDataComm }
+
+function TMsgDataComm.ConfrimMessage(TFMessages: TTFMessageList): Boolean;
+var
+  idHttp: TIdHTTP;
+begin
+  idHttp := TIdHTTP.Create(nil);
+  try
+    idHttp.ConnectTimeout := m_ConnectTimeOut;
+    idHttp.Request.Pragma := 'no-cache';
+    idHttp.Request.CacheControl := 'no-cache';
+    idHttp.Request.Connection := 'close';
+    idHttp.Get(CreateConfirmURL(TFMessages));    
+    Result := True;
+    idHttp.Disconnect();
+  finally
+    idHttp.Free;
+  end;
+end;
+constructor TMsgDataComm.Create;
+begin
+  m_ConnectTimeOut := 3000;
+  m_nLastMsgID := 0;
+  m_nMaxCount := 100;
+end;
+
+function TMsgDataComm.CreateConfirmURL(TFMessages: TTFMessageList): string;
+var
+  i: Integer;
+  strMsgIDParam: string;
+begin
+  strMsgIDParam := '';
+  for I := 0 to TFMessages.Count - 1 do
+  begin
+    if i = 0 then
+      strMsgIDParam := TFMessages.Items[i].msgID
+    else
+      strMsgIDParam := strMsgIDParam + ',' + TFMessages.Items[i].msgID;
+  end;
+  Result :=
+    TIdURI.URLEncode(Trim(m_strURLHost) + 'clientID=' + m_strClientID + '&mode=' +
+    inttostr(Ord(hmConfirmMessage)) + '&msgID=' + strMsgIDParam)
+end;
+
+function TMsgDataComm.GetMessages(TFMessageList: TTFMessageList): Boolean;
+var
+  MessageResult: string;
+  idHttp: TIdHTTP;
+  I: Integer;
+  strUrl : string;
+begin
+  Result := False;
+  idHttp := TIdHTTP.Create(nil);
+  try
+    try
+      idHttp.ConnectTimeout := m_ConnectTimeOut;
+      idHttp.Request.Pragma := 'no-cache';
+      idHttp.Request.CacheControl := 'no-cache';
+      idHttp.Request.Connection := 'close';
+
+      strUrl := CreateGetMessageURL(m_nLastMsgID);
+      MessageResult := idHttp.Get(strUrl);
+      if Trim(MessageResult) = '' then
+        exit;
+          
+      DecodeMessage(MessageResult,TFMessageList);
+      for I := 0 to TFMessageList.Count - 1 do
+      begin
+        if StrToInt(TFMessageList.Items[i].msgID) > m_nLastMsgID then
+        begin
+          m_nLastMsgID := StrToInt(TFMessageList.Items[i].msgID);
+        end;
+      end;
+      
+      Result := TFMessageList.Count > 0;
+      
+      idHttp.Disconnect();
+    except
+      on E: Exception do
+      begin
+        raise Exception.Create('获取消息失败:' + E.Message);
+      end;
+    end;
+  finally
+    idHttp.Free;
+  end;
+
+end;
+
+
+function TMsgDataComm.CreateGetMessageURL(msgID: Integer): string;
+begin
+  Result :=
+    TIdURI.URLEncode(Trim(m_strURLHost) + 'clientID=' + m_strClientID + '&mode=' +
+    IntToStr(ord(hmGetMessage)) + '&maxCount=' + IntToStr(m_nMaxCount)) + '&msgID=' + IntToStr(msgID);;
+end;
+
+function TMsgDataComm.CreatePostMessageURL(TFMessage: TTFMessage): string;
+begin
+  Result :=
+    Trim(m_strURLHost) +TIdURI.ParamsEncode(AnsiToUtf8('clientID=' + m_strClientID + '&mode=' +
+    inttostr(Ord(hmPostMessage)) + '&msgType=' + IntToStr(TFMessage.msg)
+    + '&param=' + TFMessage.JSON));
+end;
+
+function TMsgDataComm.DecodeHttpResult(strValue: string): RHttpResult;
+{功能:解板返回的HTTP结果}
+var
+  iJSON: ISuperObject;
+begin
+  iJSON := SO(strValue);
+  try
+    Result.result := iJSON.I['result'];
+    Result.strError := iJSON.S['srtError'];
+  finally
+    iJSON := nil;
+  end;
+end;
+
+procedure TMsgDataComm.DecodeMessage(strMessage: string;
+  TFMessageList: TTFMessageList);
+begin
+  strMessage := Utf8ToAnsi(strMessage);
+  TFMessageList.Clear;
+
+  TFMessageList.JSON := strMessage;
+end;
+
+
+function TMsgDataComm.SendMessage(TFMessage: TTFMessage): Boolean;
+var
+  idHttp: TIdHTTP;
+  strHttpResult: string;
+  HttpResult: RHttpResult;
+begin
+  idHttp := TIdHTTP.Create(nil);
+  try
+    try
+      idHttp.ConnectTimeout := m_ConnectTimeOut;
+      idHttp.Request.Pragma := 'no-cache';
+      idHttp.Request.CacheControl := 'no-cache';
+      idHttp.Request.Connection := 'close';
+      strHttpResult := idHttp.Get(CreatePostMessageURL(TFMessage));
+
+      if strHttpResult = '' then
+      begin
+        HttpResult.result := 1;
+        HttpResult.strError := 'WEB返回为空!';
+      end;
+      
+      HttpResult := DecodeHttpResult(strHttpResult);
+
+      Result := HttpResult.result = 0;
+
+      idHttp.Disconnect();
+      if not Result then
+        raise Exception.Create(HttpResult.strError);
+    finally
+      idHttp.Free;
+    end;
+  except
+    on E: Exception do
+    begin
+      raise Exception.Create('发送消息失败:' + E.Message);
+    end;
+  end;
+end;
+
+end.

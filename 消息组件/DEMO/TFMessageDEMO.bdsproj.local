@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2013-09-22 09:01:01.171.pas,D:\My Documents\Borland Studio Projects\Unit13.pas=E:\工作\运安系统\消息组件\DEMO\TFMessageDemo.pas</Transaction>
+    <Transaction>2013-09-22 09:01:01.171.dfm,D:\My Documents\Borland Studio Projects\Unit13.dfm=E:\工作\运安系统\消息组件\DEMO\TFMessageDemo.dfm</Transaction>
+    <Transaction>2013-09-22 09:01:16.578.pas,E:\工作\运安系统\消息组件\DEMO\TFMessageDemo.pas=E:\工作\运安系统\消息组件\DEMO\ufrmMain.pas</Transaction>
+    <Transaction>2013-09-22 09:01:16.578.dfm,E:\工作\运安系统\消息组件\DEMO\TFMessageDemo.dfm=E:\工作\运安系统\消息组件\DEMO\ufrmMain.dfm</Transaction>
+    <Transaction>2013-09-22 09:01:27.640.bdsproj,D:\My Documents\Borland Studio Projects\Project13.bdsproj=E:\工作\运安系统\消息组件\DEMO\TFMessageDEMO.bdsproj</Transaction>
+    <Transaction>2013-09-22 11:10:29.312.pas,E:\工作\运安系统\消息组件\DEMO\Unit1.pas=E:\工作\运安系统\消息组件\Source\uMessageBuffer.pas</Transaction>
+    <Transaction>2013-09-22 11:13:25.890.pas,E:\工作\运安系统\消息组件\DEMO\Unit1.pas=E:\工作\运安系统\消息组件\Source\uTFMessageDefine.pas</Transaction>
+    <Transaction>2013-09-22 12:51:41.187.pas,E:\工作\运安系统\消息组件\Source\uMessageBuffer.pas=</Transaction>
+  </Transactions>
+</BorlandProject>
